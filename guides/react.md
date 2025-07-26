@@ -13,3 +13,5 @@ Reactに対する作業を指示した際には以下のルールを厳守して
   │  └─ SampleComponent.tsx
   └─ index.ts
   ```
+### Props
+- propsをinterfaceで定義するときは、各パラメータにreadonlyを付けてください
