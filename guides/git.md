@@ -8,6 +8,13 @@ gitの利用について以下のルールを厳守してください。
 - lintやsyntax treeのエラーを無理やり回避しないで
 
 ### pull request
+#### title
+- PR名はJIRAチケット名にチケット番号を付与して
+  - [チケット番号]チケット名
+    - [XXXXX] XXXXX 
+    - [XXXXX][XXXXX] XXXXX 
+    - [XXXXX][XXXXX][XXXXX] XXXXX 
+#### description
 - descriptionはtemplateを参考にして  
   - templateの配置バスの例
    - .github/pull_request_template.md
