@@ -22,5 +22,7 @@ $ cp claude/CLAUDE.md ~/.claude/CLAUDE.md
 
 commands
 ```
+$ mkdir ~/.claude/commands/
 $ cp claude/commands/* ~/.claude/commands/
+$ ls -l ~/.claude/commands/
 ```
