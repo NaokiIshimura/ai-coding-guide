@@ -26,3 +26,10 @@ $ mkdir ~/.claude/commands/
 $ rsync -av --delete claude/commands/ ~/.claude/commands/
 $ ls -l ~/.claude/commands/
 ```
+
+hooks
+```
+1. /hooks
+2. Stop
+3. afplay /System/Library/Sounds/Funk.aiff
+```
