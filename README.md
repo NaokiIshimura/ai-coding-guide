@@ -6,21 +6,11 @@ AI アシスタント（ClaudeCode / GithubCopilot / Cline / RooCode）効果的
 ai-coding-guide/
 ├── claude/
 │   ├── CLAUDE.md
+│   ├── README.md
+│   └── commands
 ├── guides/
 │   ├── common.md
 │   ├── react.md
 │   ├── storybook.md
 │   └── test.md
-```
-
-## command
-### ClaudeCode
-CLAUDE.md
-```
-$ cp claude/CLAUDE.md ~/.claude/CLAUDE.md
-```
-
-commands
-```
-$ cp claude/commands/* ~/.claude/commands/
 ```
