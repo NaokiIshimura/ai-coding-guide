@@ -5,6 +5,13 @@
 $ cp claude/CLAUDE.md ~/.claude/CLAUDE.md
 ```
 
+## settings
+```
+1. Project settings (local)  Saved in .claude/settings.local.json
+2. Project settings          Checked in at .claude/settings.json
+3. User settings             Saved in at ~/.claude/settings.json
+```
+
 ## commands
 ```
 $ mkdir ~/.claude/commands/
