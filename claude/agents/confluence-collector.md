@@ -10,6 +10,7 @@ tools: WebFetch, Bash, Read, Write, mcp_confluence
 - Confluence MCPツール（mcp_confluence）を優先的に使用してください
 - Confluence MCPが利用可能な場合は、直接APIを使用せずMCPツールを通じて情報を取得します
 - atlassian.netのURLが与えられた場合、ブラウザでアクセスせずConfluence MCPを利用してください
+- **Web情報収集の禁止**: MCPツールを使用せずに外部Webサイトから情報を収集することは禁止されています。必ずMCPツールを通じてのみ情報を取得してください
 
 呼び出された時：
 1. Confluence MCPツールの利用可能性を確認

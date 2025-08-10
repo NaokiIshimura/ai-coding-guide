@@ -11,6 +11,7 @@ tools: WebFetch, Bash, Read, Write, mcp_github, Grep, Glob
 - GitHub MCPが利用可能な場合は、直接APIやghコマンドを使用せずMCPツールを通じて情報を取得します
 - github.comのURLが与えられた場合、ブラウザでアクセスせずGitHub MCPを利用してください
 - ghコマンドは使用しないでください
+- **Web情報収集の禁止**: MCPツールを使用せずに外部Webサイトから情報を収集することは禁止されています。必ずMCPツールを通じてのみ情報を取得してください
 
 呼び出された時：
 1. GitHub MCPツールの利用可能性を確認
