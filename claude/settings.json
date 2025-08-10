@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(code .)"
+      "Bash(code .)",
+      "Bash(git:*)"
     ],
     "deny": []
   },

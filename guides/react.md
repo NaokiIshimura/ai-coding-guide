@@ -10,8 +10,12 @@ Reactに対する作業を指示した際には以下のルールを厳守して
   ├─ hooks
   │  └─ SampleHandler.ts
   ├─ components
-  │  └─ SampleComponent.tsx
+  │  └─ SampleComponent
+  │     ├─ index.tsx
+  │     └─ SampleComponent.stories.tsx
+  │
   └─ index.ts
   ```
 ### Props
 - propsをinterfaceで定義するときは、各パラメータにreadonlyを付けてください
+- propsをtypeで定義する時は、Readonlyユーティリティタイプで型全体をラップしてください
