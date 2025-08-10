@@ -12,6 +12,13 @@ $ rsync -av --delete claude/commands/ ~/.claude/commands/
 $ ls -l ~/.claude/commands/
 ```
 
+## agents
+```
+$ mkdir ~/.claude/agents/
+$ rsync -av --delete claude/agents/ ~/.claude/agents/
+$ ls -l ~/.claude/agents/
+```
+
 ## hooks
 ```
 1. /hooks
