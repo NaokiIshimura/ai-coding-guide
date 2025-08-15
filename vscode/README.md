@@ -1,0 +1,18 @@
+# VSCode-�
+
+## .vscode/settings.json\����
+
+```bash
+mkdir -p .vscode && cat << 'EOF' > .vscode/settings.json
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#ff0000",
+    "titleBar.activeForeground": "#ffffff"
+    // "titleBar.activeBackground": "#0000ff",
+    // "titleBar.activeForeground": "#ffffff"
+    // "titleBar.activeBackground": "#008000",
+    // "titleBar.activeForeground": "#ffffff"
+  }
+}
+EOF
+```
