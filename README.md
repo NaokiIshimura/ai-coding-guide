@@ -5,9 +5,11 @@ AI アシスタント（ClaudeCode / GithubCopilot / Cline / RooCode）効果的
 ```
 ai-coding-guide/
 ├── claude/
-│   ├── CLAUDE.md      # Claude用の設定ファイル
-│   ├── agents/        # Claudeエージェント定義
-│   └── commands/      # Claudeコマンド定義
+│   ├── CLAUDE.md                # Claude用の設定ファイル
+│   ├── settings.json            # Claude設定ファイル
+│   ├── statusline-readable.sh   # Claude statusline スクリプト
+│   ├── agents/                  # Claudeエージェント定義
+│   └── commands/                # Claudeコマンド定義
 ├── guides/
 │   ├── common.md      # 共通ガイドライン
 │   ├── git.md         # Git操作ガイド
@@ -20,22 +22,27 @@ ai-coding-guide/
 
 ## インストール
 
-Makefileを使用して、Claude用の設定ファイル、エージェント、コマンドを`~/.claude/`ディレクトリにインストールできます。
+Makefileを使用して、Claude用の設定ファイル、エージェント、コマンドを`~/.claude/`ディレクトリにインストールできます。また、`~/.claude/`の設定をプロジェクトにインポートすることも可能です。
 
 ### 使用可能なコマンド
 
 ```bash
-# すべてインストール（CLAUDE.md、agents、commands）
+# すべてインストール（CLAUDE.md、settings、agents、commands）
 make install
 
 # 個別インストール
 make install-config    # CLAUDE.mdのみインストール
+make install-settings  # settings.json と statusline-readable.sh のみインストール
 make install-agents    # agentsディレクトリのみインストール
 make install-commands  # commandsディレクトリのみインストール
+
+# 設定のインポート
+make import-settings   # ~/.claude/ の設定をプロジェクトにコピー
 
 # アンインストール
 make clean            # すべて削除
 make clean-config     # CLAUDE.mdのみ削除
+make clean-settings   # settingsのみ削除
 make clean-agents     # agentsのみ削除
 make clean-commands   # commandsのみ削除
 
