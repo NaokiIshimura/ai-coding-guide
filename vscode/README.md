@@ -6,12 +6,18 @@
 mkdir -p .vscode && cat << 'EOF' > .vscode/settings.json
 {
   "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#ff0000", // タイトルバーの背景色
-    "titleBar.activeForeground": "#ffffff"  // タイトルバーの文字色
-    // "titleBar.activeBackground": "#0000ff", // タイトルバーの背景色
-    // "titleBar.activeForeground": "#ffffff"  // タイトルバーの文字色
-    // "titleBar.activeBackground": "#008000", // タイトルバーの背景色
-    // "titleBar.activeForeground": "#ffffff"  // タイトルバーの文字色
+    // titleBar
+    "titleBar.activeBackground": "#e74073", // タイトルバーの背景色
+    "titleBar.activeForeground": "#ffffff", // タイトルバーの文字色
+    // "titleBar.activeBackground": "#e7db84", // タイトルバーの背景色
+    // "titleBar.activeForeground": "#000000", // タイトルバーの文字色
+    // "titleBar.activeBackground": "#83d6ee", // タイトルバーの背景色
+    // "titleBar.activeForeground": "#000000",  // タイトルバーの文字色
+    // activityBar
+    "activityBar.background": "#f2f6f9", // アクティビティバーの背景色
+    "activityBar.foreground": "#000000", // アクティビティバーの文字色
+    // "activityBar.background": "#ee7800", // アクティビティバーの背景色
+    // "activityBar.foreground": "#000000", // アクティビティバーの文字色
   }
 }
 EOF
