@@ -15,7 +15,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay ~/ai-coding-guide/sounds/Glass.aiff"
+            "command": "mplayer ~/ai-coding-guide/sounds/Glass.aiff >& /dev/null"
           }
         ]
       }
@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay ~/ai-coding-guide/sounds/Funk.aiff"
+            "command": "mplayer ~/ai-coding-guide/sounds/Funk.aiff >& /dev/null"
           }
         ]
       }

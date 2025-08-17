@@ -50,3 +50,17 @@ Claudeがツールを使用する許可が必要な場合。例：「ClaudeがBa
 2. Stop
 3. afplay /System/Library/Sounds/Funk.aiff
 ```
+
+#### mplayer
+
+```
+# Mac
+$ brew install mplayer
+
+# Linux
+$ sudo apt-get install mplayer
+
+# play
+$ mplayer ~/ai-coding-guide/sounds/Glass.aiff >& /dev/null
+$ mplayer ~/ai-coding-guide/sounds/Funk.aiff >& /dev/null
+```
