@@ -16,7 +16,7 @@ mkdir -p .vscode && cat << 'EOF' > .vscode/settings.json
     // activityBar
     "activityBar.background": "#f2f6f9", // アクティビティバーの背景色
     "activityBar.foreground": "#000000", // アクティビティバーの文字色
-    // "activityBar.background": "#ee7800", // アクティビティバーの背景色
+    // "activityBar.background": "#FAB27B", // アクティビティバーの背景色
     // "activityBar.foreground": "#000000", // アクティビティバーの文字色
   }
 }

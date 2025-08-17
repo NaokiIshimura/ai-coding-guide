@@ -15,7 +15,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Glass.aiff"
+            "command": "afplay ~/ai-coding-guide/sounds/Glass.aiff"
           }
         ]
       }
@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Funk.aiff"
+            "command": "afplay ~/ai-coding-guide/sounds/Funk.aiff"
           }
         ]
       }
