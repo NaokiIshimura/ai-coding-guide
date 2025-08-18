@@ -17,3 +17,6 @@
 
 ## test
 @~/ai-coding-guide/guides/test.md
+
+## pull-request
+@~/ai-coding-guide/guides/pull-request.md
