@@ -1,0 +1,8 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#e3e3e3", // タイトルバーの背景色
+    "titleBar.activeForeground": "#ee7800", // タイトルバーの文字色
+    // "activityBar.background": "#ee7800", // アクティビティバーの背景色
+    // "activityBar.foreground": "#000000", // アクティビティバーの文字色
+  }
+}
