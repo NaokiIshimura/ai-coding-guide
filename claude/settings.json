@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git commit:*)",
+      "Bash(claude agents)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
       "mcp__*"
     ],
     "deny": [
