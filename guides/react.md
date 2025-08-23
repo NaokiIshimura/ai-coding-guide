@@ -7,14 +7,18 @@ Reactに対する作業を指示した際には以下のルールを厳守して
 - ロジックとUIはコンポーネントを分割してください
 - 1つのファイルに全てのコードを記述せず、適切にファイル分割してください
   ```
+  ShowUser
   ├─ hooks
-  │  └─ SampleHandler.ts
+  │  ├─ fetchUsers.ts
+  │  ├─ handleClick.ts
+  │  └─ index.ts
   ├─ components
-  │  └─ SampleComponent
-  │     ├─ index.tsx
-  │     └─ SampleComponent.stories.tsx
-  │
-  └─ index.ts
+  │  ├─ UserComponent
+  │  │  ├─ index.tsx
+  │  │  └─ UserComponent.stories.tsx
+  │  └─ index.ts
+  ├─ index.ts
+  └─ ShowUser.stories.tsx
   ```
 ### Props
 - propsをinterfaceで定義するときは、各パラメータにreadonlyを付けてください
