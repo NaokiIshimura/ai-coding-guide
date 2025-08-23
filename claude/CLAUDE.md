@@ -20,3 +20,6 @@
 
 ## pull-request
 @~/ai-coding-guide/guides/pull-request.md
+
+## docker
+@~/ai-coding-guide/guides/docker.md
