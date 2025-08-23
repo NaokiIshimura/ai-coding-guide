@@ -1,6 +1,8 @@
 # VSCode設定
 
-## .vscode/settings.json作成コマンド
+## .vscode/settings.json
+
+### 作成コマンド
 
 ```bash
 mkdir -p .vscode && cat << 'EOF' > .vscode/settings.json
@@ -21,4 +23,10 @@ mkdir -p .vscode && cat << 'EOF' > .vscode/settings.json
   }
 }
 EOF
+```
+
+### .gitignore
+
+```
+echo '*' > .vscode/.gitignore
 ```
