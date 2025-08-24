@@ -22,7 +22,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay ~/ai-coding-guide/sounds/Glass.aiff"
+            "command": "command -v afplay > /dev/null 2>&1 && afplay ~/ai-coding-guide/sounds/Glass.aiff"
           }
         ]
       }
@@ -33,7 +33,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay ~/ai-coding-guide/sounds/Funk.aiff"
+            "command": "command -v afplay > /dev/null 2>&1 && afplay ~/ai-coding-guide/sounds/Funk.aiff"
           }
         ]
       }
