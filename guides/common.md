@@ -41,29 +41,29 @@
 #### claude code
 ```
 .claude/tasks/<チケット番号>/xxx.md
-.claude/tmp/<チケット番号>/xxx.md
+.claude/tmp/xxx.md
 ```
 
 #### cline
 ```
 .cline/tasks/<チケット番号>/xxx.md
-.cline/tmp/<チケット番号>/xxx.md
+.cline/tmp/xxx.md
 ```
 
 #### roo code
 ```
 .roo/tasks/<チケット番号>/xxx.md
-.roo/tmp/<チケット番号>/xxx.md
+.roo/tmp/xxx.md
 ```
 
 #### goose
 ```
 .goose/tasks/<チケット番号>/xxx.md
-.goose/tmp/<チケット番号>/xxx.md
+.goose/tmp/xxx.md
 ```
 
 #### github copilot
 ```
 .copilot/tasks/<チケット番号>/xxx.md
-.copilot/tmp/<チケット番号>/xxx.md
+.copilot/tmp/xxx.md
 ```
