@@ -8,4 +8,4 @@ MCPの利用について以下のルールを厳守してください。
 - github MCPが利用できない場合は、ghコマンドを利用してください
 
 ### JIRA
-- `atlassian.net`のURLが与えられた場合、ブラウザでアクセスせず、jira MCPもしくはconfluence MCPを利用してください
+- `atlassian.net`のURLが与えられた場合、ブラウザでアクセスせず、atlassian-v2 MCPを利用してください
