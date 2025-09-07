@@ -23,3 +23,13 @@
 
 ## docker
 @~/ai-coding-guide/guides/docker.md
+
+---
+
+# sub-agent
+
+## 共通
+- sub-agentの実行結果は一時的ファイルとしてmdファイルを出力するようにしてください
+
+## file-collector
+- 大きなファイルを読み込む必要がある場合は、メインタスクのコンテクストを圧迫しないように、sub-agent`file-collector`を利用してください
