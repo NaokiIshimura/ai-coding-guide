@@ -31,6 +31,8 @@ Storybookに関する指示した際には以下のルールを厳守してく�
 
 #### サンプルコード
 ```
+import { expect, within } from 'storybook/test';
+
 play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
