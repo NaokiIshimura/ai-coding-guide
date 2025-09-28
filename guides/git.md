@@ -27,7 +27,7 @@ gitの利用について以下のルールを厳守してください。
   - [チケット番号][XXXXX] チケット名 
   - [チケット番号][XXXXX][XXXXX] チケット名 
 #### description
-- descriptionはtemplateを参考にして  
+- **重要**: descriptionはtemplateを参考にして  
   - templateの配置バスの例
    - .github/pull_request_template.md
 - descriptionは日本語で記述して
