@@ -22,8 +22,15 @@
 ## 一時ファイルの作成ルール
 - プロジェクトのルートディレクトリ直下に一時ファイルを作成しないでください
 - 一時ファイルを作成する際には、プロジェクト配下の`.<エージェント名>`ディレクトリ配下に作成してください
-- 一時ファイルのファイル名先頭にタイムスタンプを付けてください
-  - YYYYMMDDHHMM_xxx.md
+
+## マークダウンファイルの作成ルール
+- マークダウンファイルのファイル名先頭にタイムスタンプを付けてください
+  - YYYY_MMDD_HHMM-xxx.md
+    - 例
+      - 2025年01月02日03時04分の場合
+        - 2025_0102_0304-xxx.md
+      - 2025年11月22日15時44分の場合
+        - 2025_1122_1544-xxx.md
 
 ### チケット番号が与えられている場合
 ```
@@ -35,37 +42,38 @@
 ### チケット番号が与えられてない場合
 ```
 .<エージェント名>
-└ tmp
-  └ xxx.md
+  └ tasks
+    └ tmp
+      └ xxx.md
 ```
 
 ### 例
 #### claude code
 ```
 .claude/tasks/<チケット番号>/xxx.md
-.claude/tmp/xxx.md
+.claude/tasks/tmp/xxx.md
 ```
 
 #### cline
 ```
 .cline/tasks/<チケット番号>/xxx.md
-.cline/tmp/xxx.md
+.cline/tasks/tmp/xxx.md
 ```
 
 #### roo code
 ```
 .roo/tasks/<チケット番号>/xxx.md
-.roo/tmp/xxx.md
+.roo/tasks/tmp/xxx.md
 ```
 
 #### goose
 ```
 .goose/tasks/<チケット番号>/xxx.md
-.goose/tmp/xxx.md
+.goose/tasks/tmp/xxx.md
 ```
 
 #### github copilot
 ```
 .copilot/tasks/<チケット番号>/xxx.md
-.copilot/tmp/xxx.md
+.copilot/tasks/tmp/xxx.md
 ```
