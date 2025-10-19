@@ -10,7 +10,9 @@
       "Bash(git:*)",
       "Bash(gh:*)",
       "Bash(colima:*)",
-      "mcp__*"
+      "mcp__*",
+      "Bash(code --diff*)", // -diffオプション付きのcodeコマンドのみ
+      "Bash(code *)" // より広い範囲を許可
     ],
     "deny": [
       "Read(/coverage/)"
