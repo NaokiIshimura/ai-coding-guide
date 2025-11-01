@@ -24,6 +24,9 @@
 ## docker
 @~/ai-coding-guide/guides/docker.md
 
+## speckit
+@~/ai-coding-guide/guides/speckit.md
+
 ---
 
 # sub-agent
