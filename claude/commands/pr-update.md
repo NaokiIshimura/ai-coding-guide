@@ -1,23 +1,27 @@
 # PR Description Update
 
-現在のブランチの変更内容を基にPRのdescriptionを更新するコマンドです。
+現在のブランチの変更内容を基にPRのtitle, descriptionを更新するコマンドです。
 
 ## 実行内容
 
 1. 現在のブランチの変更内容を分析
 2. git log と git diff を使用してコミット履歴と変更内容を取得
-3. 既存のPRのdescriptionを更新
+3. 既存のPRのtitle, descriptionを更新
 
-## 対応フォーマット
-
-- JIRAチケット形式のタイトル: `[チケット番号] チケット名`
+## title
+- バージョン番号形式
+  - [バージョン番号] 機能名
+- JIRAチケット形式
+  - [チケット番号] チケット名
 - 日本語でのdescription記述
+
+## description
 - PRテンプレートに基づく構成
 
 ## 実行方法
 
 ```bash
-# 現在のブランチの変更内容を分析してPR descriptionを更新
+# 現在のブランチの変更内容を分析してPR title, descriptionを更新
 git log --oneline -10
 git diff origin/master...HEAD
 gh pr edit --body-file <(cat <<'EOF'
