@@ -11,8 +11,8 @@
       "Bash(gh:*)",
       "Bash(colima:*)",
       "mcp__*",
-      "Bash(code --diff*)", // -diffオプション付きのcodeコマンドのみ
-      "Bash(code *)" // より広い範囲を許可
+      "Bash(code --diff*)",
+      "Bash(code *)"
     ],
     "deny": [
       "Read(/coverage/)"
@@ -45,6 +45,5 @@
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-readable.sh"
-  },
-  "model": "opusplan"
+  }
 }
