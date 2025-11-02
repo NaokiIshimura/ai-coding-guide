@@ -4,15 +4,13 @@
       "Bash(claude agents)",
       "Bash(find:*)",
       "Bash(ls:*)",
-      "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(cat:*)",
       "Bash(git:*)",
       "Bash(gh:*)",
       "Bash(colima:*)",
       "mcp__*",
-      "Bash(code --diff*)",
-      "Bash(code *)"
+      "Bash(code:*)"
     ],
     "deny": [
       "Read(/coverage/)"
@@ -21,7 +19,6 @@
   "hooks": {
     "Notification": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
@@ -32,7 +29,6 @@
     ],
     "Stop": [
       {
-        "matcher": "",
         "hooks": [
           {
             "type": "command",
