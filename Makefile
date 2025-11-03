@@ -79,17 +79,11 @@ clean-settings:
 # Clean agents
 clean-agents:
 	@echo "Removing agents from ~/.claude/agents/"
-	@for file in claude/agents/*.md; do \
-		basename=$$(basename "$$file"); \
-		rm -fv ~/.claude/agents/"$$basename"; \
-	done
+	@rm -fv ~/.claude/agents/*.md
 	@echo "✓ Agents removed"
 
 # Clean commands
 clean-commands:
 	@echo "Removing commands from ~/.claude/commands/"
-	@for file in claude/commands/*.md; do \
-		basename=$$(basename "$$file"); \
-		rm -fv ~/.claude/commands/"$$basename"; \
-	done
+	@rm -fv ~/.claude/commands/*.md
 	@echo "✓ Commands removed"
