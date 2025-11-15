@@ -1,6 +1,9 @@
 {
   "permissions": {
     "allow": [
+      "Edit",
+      "Write",
+      "MultiEdit",
       "Bash(claude agents)",
       "Bash(find:*)",
       "Bash(ls:*)",
