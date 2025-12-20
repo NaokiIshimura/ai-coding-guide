@@ -1,14 +1,15 @@
 # ai-coding-guide Makefile
 # Claude agents and commands deployment
 
-.PHONY: help install install-config install-settings install-agents install-commands import-settings clean clean-config clean-settings clean-agents clean-commands
+.PHONY: help install install-config install-settings install-statusline install-agents install-commands import-settings clean clean-config clean-settings clean-agents clean-commands
 
 # Default target
 help:
 	@echo "Available targets:"
 	@echo "  make install         - Install CLAUDE.md, settings, agents and commands to ~/.claude/"
 	@echo "  make install-config  - Install CLAUDE.md to ~/.claude/"
-	@echo "  make install-settings - Install settings.json and statusline-readable.sh to ~/.claude/"
+	@echo "  make install-settings - Install settings.json to ~/.claude/"
+	@echo "  make install-statusline - Install statusline-readable.sh to ~/.claude/"
 	@echo "  make install-agents  - Install agents to ~/.claude/agents/"
 	@echo "  make install-commands - Install commands to ~/.claude/commands/"
 	@echo "  make import-settings  - Copy settings from ~/.claude/ to claude/ directory"
@@ -19,7 +20,7 @@ help:
 	@echo "  make clean-commands  - Remove installed commands"
 
 # Install all
-install: install-config install-settings install-agents install-commands
+install: install-config install-settings install-statusline install-agents install-commands
 	@echo "✓ Installation complete"
 
 # Install CLAUDE.md
@@ -29,13 +30,19 @@ install-config:
 	@cp -v claude/CLAUDE.md ~/.claude/CLAUDE.md
 	@echo "✓ CLAUDE.md installed"
 
-# Install settings
+# Install settings.json
 install-settings:
-	@echo "Installing settings to ~/.claude/"
+	@echo "Installing settings.json to ~/.claude/"
 	@mkdir -p ~/.claude
 	@cp -v claude/settings.json ~/.claude/settings.json
+	@echo "✓ settings.json installed"
+
+# Install statusline-readable.sh
+install-statusline:
+	@echo "Installing statusline-readable.sh to ~/.claude/"
+	@mkdir -p ~/.claude
 	@cp -v claude/statusline-readable.sh ~/.claude/statusline-readable.sh
-	@echo "✓ Settings installed"
+	@echo "✓ statusline-readable.sh installed"
 
 # Import settings
 import-settings:

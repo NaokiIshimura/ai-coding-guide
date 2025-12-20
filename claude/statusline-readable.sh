@@ -9,6 +9,11 @@ model_name=$(echo "$input" | jq -r '.model.display_name')
 project_dir=$(echo "$input" | jq -r '.workspace.project_dir')
 username=$(whoami)
 
+# Token usage information
+total_input=$(echo "$input" | jq -r '.context_window.total_input_tokens // 0')
+total_output=$(echo "$input" | jq -r '.context_window.total_output_tokens // 0')
+context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 0')
+
 # Colors for better readability (brighter colors for improved visibility)
 RESET='\033[0m'
 BOLD='\033[1m'
@@ -19,6 +24,21 @@ YELLOW='\033[93m'  # Bright yellow
 CYAN='\033[96m'  # Bright cyan
 PURPLE='\033[95m'  # Bright purple
 LIGHT_BLUE='\033[94m'  # Additional bright blue for directories
+
+# Generate progress bar
+# Args: $1=percentage (0-100), $2=width (default 10)
+generate_progress_bar() {
+    local percent=$1
+    local width=${2:-10}
+    local filled=$((percent * width / 100))
+    local empty=$((width - filled))
+
+    local bar=""
+    for ((i=0; i<filled; i++)); do bar+="█"; done
+    for ((i=0; i<empty; i++)); do bar+="░"; done
+
+    echo "$bar"
+}
 
 # Calculate directory display with improved hierarchy and readability
 dir_display=""
@@ -223,6 +243,21 @@ case "$model_name" in
     *) model_short="$model_name" ;;
 esac
 
+# Context usage display with progress bar
+context_info=""
+usage_percent=0
+progress_bar=""
+if [ "$context_size" -gt 0 ] 2>/dev/null; then
+    total_tokens=$((total_input + total_output))
+    usage_percent=$((total_tokens * 100 / context_size))
+    # Cap at 100%
+    if [ "$usage_percent" -gt 100 ]; then
+        usage_percent=100
+    fi
+    progress_bar=$(generate_progress_bar "$usage_percent")
+    context_info="[${progress_bar}] ${usage_percent}%"
+fi
+
 # Construct readable status line with enhanced visibility and hierarchy
 # Enhance directory display by highlighting the current directory name with brighter colors
 if [[ "$dir_display" == *"/" ]]; then
@@ -243,3 +278,18 @@ if [ -n "$git_info" ]; then
 fi
 
 printf " %busing%b %b%b%s%b" "$DIM" "$RESET" "$BOLD" "$PURPLE" "$model_short" "$RESET"
+
+# Add context usage progress bar at the end
+if [ -n "$context_info" ]; then
+    # Color based on usage level
+    if [ "$usage_percent" -ge 90 ]; then
+        BAR_COLOR='\033[91m'  # Red for high usage
+    elif [ "$usage_percent" -ge 70 ]; then
+        BAR_COLOR='\033[93m'  # Yellow for medium usage
+    else
+        BAR_COLOR='\033[92m'  # Green for low usage
+    fi
+    printf " %b[%b%s%b]%b %b%d%%%b" \
+        "$DIM" "$BAR_COLOR" "$progress_bar" "$DIM" "$RESET" \
+        "$BAR_COLOR" "$usage_percent" "$RESET"
+fi

@@ -31,10 +31,11 @@ Makefileを使用して、Claude用の設定ファイル、エージェント、
 make install
 
 # 個別インストール
-make install-config    # CLAUDE.mdのみインストール
-make install-settings  # settings.json と statusline-readable.sh のみインストール
-make install-agents    # agentsディレクトリのみインストール
-make install-commands  # commandsディレクトリのみインストール
+make install-config     # CLAUDE.mdのみインストール
+make install-settings   # settings.jsonのみインストール
+make install-statusline # statusline-readable.shのみインストール
+make install-agents     # agentsディレクトリのみインストール
+make install-commands   # commandsディレクトリのみインストール
 
 # 設定のインポート
 make import-settings   # ~/.claude/ の設定をプロジェクトにコピー
