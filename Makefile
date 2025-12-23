@@ -1,26 +1,28 @@
 # ai-coding-guide Makefile
 # Claude agents and commands deployment
 
-.PHONY: help install install-config install-settings install-statusline install-agents install-commands import-settings clean clean-config clean-settings clean-agents clean-commands
+.PHONY: help install install-config install-settings install-statusline install-agents install-commands install-skills import-settings clean clean-config clean-settings clean-agents clean-commands clean-skills
 
 # Default target
 help:
 	@echo "Available targets:"
-	@echo "  make install         - Install CLAUDE.md, settings, agents and commands to ~/.claude/"
-	@echo "  make install-config  - Install CLAUDE.md to ~/.claude/"
-	@echo "  make install-settings - Install settings.json to ~/.claude/"
+	@echo "  make install           - Install CLAUDE.md, settings, agents, commands and skills to ~/.claude/"
+	@echo "  make install-config    - Install CLAUDE.md to ~/.claude/"
+	@echo "  make install-settings  - Install settings.json to ~/.claude/"
 	@echo "  make install-statusline - Install statusline-readable.sh to ~/.claude/"
-	@echo "  make install-agents  - Install agents to ~/.claude/agents/"
-	@echo "  make install-commands - Install commands to ~/.claude/commands/"
-	@echo "  make import-settings  - Copy settings from ~/.claude/ to claude/ directory"
-	@echo "  make clean           - Remove installed files"
-	@echo "  make clean-config    - Remove installed CLAUDE.md"
-	@echo "  make clean-settings  - Remove installed settings"
-	@echo "  make clean-agents    - Remove installed agents"
-	@echo "  make clean-commands  - Remove installed commands"
+	@echo "  make install-agents    - Install agents to ~/.claude/agents/"
+	@echo "  make install-commands  - Install commands to ~/.claude/commands/"
+	@echo "  make install-skills    - Install skills to ~/.claude/skills/"
+	@echo "  make import-settings   - Copy settings from ~/.claude/ to claude/ directory"
+	@echo "  make clean             - Remove installed files"
+	@echo "  make clean-config      - Remove installed CLAUDE.md"
+	@echo "  make clean-settings    - Remove installed settings"
+	@echo "  make clean-agents      - Remove installed agents"
+	@echo "  make clean-commands    - Remove installed commands"
+	@echo "  make clean-skills      - Remove installed skills"
 
 # Install all
-install: install-config install-settings install-statusline install-agents install-commands
+install: install-config install-settings install-statusline install-agents install-commands install-skills
 	@echo "✓ Installation complete"
 
 # Install CLAUDE.md
@@ -66,8 +68,15 @@ install-commands:
 	@cp -v claude/commands/*.md ~/.claude/commands/
 	@echo "✓ Commands installed"
 
+# Install skills
+install-skills:
+	@echo "Installing skills to ~/.claude/skills/"
+	@mkdir -p ~/.claude/skills
+	@cp -v claude/skills/*.md ~/.claude/skills/
+	@echo "✓ Skills installed"
+
 # Clean all
-clean: clean-config clean-settings clean-agents clean-commands
+clean: clean-config clean-settings clean-agents clean-commands clean-skills
 	@echo "✓ Cleanup complete"
 
 # Clean CLAUDE.md
@@ -94,3 +103,9 @@ clean-commands:
 	@echo "Removing commands from ~/.claude/commands/"
 	@rm -fv ~/.claude/commands/*.md
 	@echo "✓ Commands removed"
+
+# Clean skills
+clean-skills:
+	@echo "Removing skills from ~/.claude/skills/"
+	@rm -fv ~/.claude/skills/*.md
+	@echo "✓ Skills removed"

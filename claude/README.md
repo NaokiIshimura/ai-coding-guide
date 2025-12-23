@@ -26,6 +26,21 @@ $ rsync -av --delete claude/agents/ ~/.claude/agents/
 $ ls -l ~/.claude/agents/
 ```
 
+## skills
+```
+$ mkdir ~/.claude/skills/
+$ rsync -av --delete claude/skills/ ~/.claude/skills/
+$ ls -l ~/.claude/skills/
+```
+
+## ディレクトリ構成
+
+| ディレクトリ | 説明 | 呼び出し方 |
+|-------------|------|-----------|
+| `agents/` | sub-agent定義 | Task tool (subagent_type) |
+| `commands/` | スラッシュコマンド定義 | `/xxx` |
+| `skills/` | スキル定義 | Skill tool |
+
 ## hooks
 [フックリファレンス - Anthropic](https://docs.anthropic.com/ja/docs/claude-code/hooks)
 
