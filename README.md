@@ -81,7 +81,7 @@ Claudeが自動的に使用するスキルです。
 
 ## Agents（エージェント）
 
-Taskツール経由で呼び出すエージェントです。詳細は [claude/agents/README.md](claude/agents/README.md) を参照してください。
+Taskツール経由で呼び出すエージェントです。詳細は [claude/AGENTS.md](claude/AGENTS.md) を参照してください。
 
 ### 実装計画作成
 
@@ -128,7 +128,7 @@ Taskツール経由で呼び出すエージェントです。詳細は [claude/a
 
 ## Commands（コマンド）
 
-`/`で呼び出すコマンドです。詳細は [claude/commands/README.md](claude/commands/README.md) を参照してください。
+`/`で呼び出すコマンドです。詳細は [claude/COMMANDS.md](claude/COMMANDS.md) を参照してください。
 
 ### 実装計画
 

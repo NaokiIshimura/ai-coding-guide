@@ -77,7 +77,6 @@ install-skills:
 		mkdir -p ~/.claude/skills/$$name; \
 		cp -v "$$dir"*.md ~/.claude/skills/$$name/; \
 	done
-	@cp -v claude/skills/README.md ~/.claude/skills/
 	@echo "✓ Skills installed"
 
 # Clean all
