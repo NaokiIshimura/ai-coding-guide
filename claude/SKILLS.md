@@ -1,6 +1,15 @@
 # Claude Code Skills
 
-このディレクトリには、Claude Codeで自動的に使用されるスキルが含まれています。
+このディレクトリには、Skill tool で呼び出し可能なスキル定義が格納されています。
+
+## Skills、Commands、Agents の違い
+
+| 項目 | Skills | Commands | Agents |
+|------|--------|----------|--------|
+| 呼び出し方 | Skill tool | `/xxx` | Task tool (subagent_type) |
+| 実行主体 | メインプロセス | メインプロセス | サブプロセス |
+| コンテキスト | 共有 | 共有 | 独立 |
+| 用途 | 汎用的なスキル | プロジェクト固有のワークフロー | 専門的タスクの自律実行 |
 
 ## スキル一覧
 
@@ -16,7 +25,6 @@
 
 ```
 .claude/skills/
-├── README.md                      # このファイル
 ├── plan-create/
 │   └── SKILL.md                   # 実装計画作成スキル（統合）
 ├── requirements-writer/
@@ -27,6 +35,20 @@
 │   └── SKILL.md                   # タスクリスト作成スキル
 └── tasks-execute/
     └── SKILL.md                   # タスク実行スキル
+```
+
+## スキルの使用方法
+
+スキルは以下のように呼び出します：
+
+```
+/スキル名 [引数]
+```
+
+例：
+```
+/plan-create
+/tasks-execute
 ```
 
 ## スキルの呼び出し関係
@@ -96,6 +118,31 @@ YYYY_MMDD_HHMM_<ドキュメント種別>.md
 
 例: `2025_0102_0304_requirements.md`
 
+## スキルファイルの形式
+
+```markdown
+---
+description: <スキルの説明>
+allowed-tools: <許可ツール（カンマ区切り）>
+---
+
+## 概要
+<スキルの概要説明>
+
+## タスク
+<実行するタスクの詳細>
+```
+
+## カスタムスキルの追加
+
+新しいスキルを追加する場合は、上記の形式でmarkdownファイルを作成してください。
+
+### 命名規則
+
+- ディレクトリ名: `機能名/`（例: `git/`, `pull-request/`）
+- ファイル名: `SKILL.md`
+- 機能単位でまとめる（コマンド単位ではなく）
+
 ## 関連ファイル
 
 ### Agent（Taskツール経由での呼び出し用）
@@ -109,7 +156,3 @@ YYYY_MMDD_HHMM_<ドキュメント種別>.md
 
 - `claude/commands/plan.create.md` - `/plan.create`
 - `claude/commands/tasks.execute.md` - `/tasks.execute`
-
-## 参考
-
-- [Claude Code Skills ドキュメント](https://code.claude.com/docs/ja/skills)
