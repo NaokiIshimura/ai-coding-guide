@@ -6,20 +6,20 @@
 # Default target
 help:
 	@echo "Available targets:"
-	@echo "  make install           - Install CLAUDE.md, settings, agents, commands and skills to ~/.claude/"
-	@echo "  make install-config    - Install CLAUDE.md to ~/.claude/"
-	@echo "  make install-settings  - Install settings.json to ~/.claude/"
+	@echo "  make install          - Install CLAUDE.md, settings, agents, commands and skills to ~/.claude/"
+	@echo "  make install-config   - Install CLAUDE.md to ~/.claude/"
+	@echo "  make install-settings - Install settings.json to ~/.claude/"
 	@echo "  make install-statusline - Install statusline-readable.sh to ~/.claude/"
-	@echo "  make install-agents    - Install agents to ~/.claude/agents/"
-	@echo "  make install-commands  - Install commands to ~/.claude/commands/"
-	@echo "  make install-skills    - Install skills to ~/.claude/skills/"
-	@echo "  make import-settings   - Copy settings from ~/.claude/ to claude/ directory"
-	@echo "  make clean             - Remove installed files"
-	@echo "  make clean-config      - Remove installed CLAUDE.md"
-	@echo "  make clean-settings    - Remove installed settings"
-	@echo "  make clean-agents      - Remove installed agents"
-	@echo "  make clean-commands    - Remove installed commands"
-	@echo "  make clean-skills      - Remove installed skills"
+	@echo "  make install-agents   - Install agents to ~/.claude/agents/"
+	@echo "  make install-commands - Install commands to ~/.claude/commands/"
+	@echo "  make install-skills   - Install skills to ~/.claude/skills/"
+	@echo "  make import-settings  - Copy settings from ~/.claude/ to claude/ directory"
+	@echo "  make clean            - Remove installed files"
+	@echo "  make clean-config     - Remove installed CLAUDE.md"
+	@echo "  make clean-settings   - Remove installed settings"
+	@echo "  make clean-agents     - Remove installed agents"
+	@echo "  make clean-commands   - Remove installed commands"
+	@echo "  make clean-skills     - Remove installed skills"
 
 # Install all
 install: install-config install-settings install-statusline install-agents install-commands install-skills
@@ -72,7 +72,11 @@ install-commands:
 install-skills:
 	@echo "Installing skills to ~/.claude/skills/"
 	@mkdir -p ~/.claude/skills
-	@cp -v claude/skills/*.md ~/.claude/skills/
+	@for dir in claude/skills/*/; do \
+		name=$$(basename "$$dir"); \
+		mkdir -p ~/.claude/skills/$$name; \
+		cp -v "$$dir"*.md ~/.claude/skills/$$name/; \
+	done
 	@echo "✓ Skills installed"
 
 # Clean all
@@ -107,5 +111,5 @@ clean-commands:
 # Clean skills
 clean-skills:
 	@echo "Removing skills from ~/.claude/skills/"
-	@rm -fv ~/.claude/skills/*.md
+	@rm -rfv ~/.claude/skills/*
 	@echo "✓ Skills removed"

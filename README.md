@@ -9,7 +9,8 @@ ai-coding-guide/
 │   ├── settings.json            # Claude設定ファイル
 │   ├── statusline-readable.sh   # Claude statusline スクリプト
 │   ├── agents/                  # Claudeエージェント定義
-│   └── commands/                # Claudeコマンド定義
+│   ├── commands/                # Claudeコマンド定義
+│   └── skills/                  # Claudeスキル定義
 ├── guides/
 │   ├── common.md      # 共通ガイドライン
 │   ├── git.md         # Git操作ガイド
@@ -22,12 +23,12 @@ ai-coding-guide/
 
 ## インストール
 
-Makefileを使用して、Claude用の設定ファイル、エージェント、コマンドを`~/.claude/`ディレクトリにインストールできます。また、`~/.claude/`の設定をプロジェクトにインポートすることも可能です。
+Makefileを使用して、Claude用の設定ファイル、エージェント、コマンド、スキルを`~/.claude/`ディレクトリにインストールできます。また、`~/.claude/`の設定をプロジェクトにインポートすることも可能です。
 
 ### 使用可能なコマンド
 
 ```bash
-# すべてインストール（CLAUDE.md、settings、agents、commands）
+# すべてインストール（CLAUDE.md、settings、agents、commands、skills）
 make install
 
 # 個別インストール
@@ -36,6 +37,7 @@ make install-settings   # settings.jsonのみインストール
 make install-statusline # statusline-readable.shのみインストール
 make install-agents     # agentsディレクトリのみインストール
 make install-commands   # commandsディレクトリのみインストール
+make install-skills     # skillsディレクトリのみインストール
 
 # 設定のインポート
 make import-settings   # ~/.claude/ の設定をプロジェクトにコピー
@@ -46,6 +48,7 @@ make clean-config     # CLAUDE.mdのみ削除
 make clean-settings   # settingsのみ削除
 make clean-agents     # agentsのみ削除
 make clean-commands   # commandsのみ削除
+make clean-skills     # skillsのみ削除
 
 # ヘルプ表示
 make help
@@ -63,4 +66,52 @@ make install
 
 # 確認
 ls ~/.claude/
+```
+
+## ワークフロー
+
+### 新機能開発の基本フロー
+
+```
+/plan.create          # 実装計画を作成（requirements/design/tasks.md）
+     ↓
+/tasks.execute        # tasks.mdに基づいて順次実装
+     ↓
+/git.commit.push.pr   # コミット・プッシュ・PR作成
+     ↓
+/pr.comment.resolve   # レビューコメントへの対応
+```
+
+### JIRAチケットからの開発フロー
+
+```
+/jira.issue.develop   # JIRAチケットから実装計画作成＆開発
+     ↓
+/git.commit.push.pr   # コミット・プッシュ・PR作成
+     ↓
+/jira.issue.feedback  # JIRAチケットへフィードバック
+```
+
+### 計画ベースの開発フロー
+
+```
+/plan.create                      # 実装計画を作成
+     ↓
+/tasks.execute <tasks.md>         # タスクを順次実装
+     ↓
+/git.commit                       # コミット
+     ↓
+/tasks.execute <tasks.md>         # 残りのタスクを実装
+     ↓
+/git.commit.push.pr               # 最終コミット＆PR作成
+```
+
+### 作業再開時のフロー
+
+```
+/md.input             # 過去の作業状況を確認
+     ↓
+/git.pull.default     # デフォルトブランチの最新を取得
+     ↓
+/tasks.execute        # 残りのタスクを実装
 ```
