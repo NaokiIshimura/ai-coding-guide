@@ -10,6 +10,7 @@
 | `requirements-writer` | 仕様書を作成 | requirements.md |
 | `design-writer` | 設計書を作成 | design.md |
 | `tasks-writer` | タスクリストを作成 | tasks.md |
+| `tasks-execute` | tasks.mdに基づいてタスクを実行 | 更新されたtasks.md, 実装コード |
 
 ## ディレクトリ構成
 
@@ -22,8 +23,10 @@
 │   └── SKILL.md                   # 仕様書作成スキル
 ├── design-writer/
 │   └── SKILL.md                   # 設計書作成スキル
-└── tasks-writer/
-    └── SKILL.md                   # タスクリスト作成スキル
+├── tasks-writer/
+│   └── SKILL.md                   # タスクリスト作成スキル
+└── tasks-execute/
+    └── SKILL.md                   # タスク実行スキル
 ```
 
 ## スキルの呼び出し関係
@@ -69,6 +72,15 @@ plan-create
 - 実装計画を立てる時
 - 「タスクを分解して」「作業を洗い出して」と言われた時
 
+### tasks-execute
+
+tasks.mdに基づいてタスクを実行するスキル。以下のトリガーで自動的に呼び出されます：
+
+- tasks.mdに基づいて実装を進める時
+- 計画されたタスクを順番に実装する時
+- 「タスクを実行して」「実装を進めて」と言われた時
+- 「次のタスクをやって」と言われた時
+
 ## 出力先
 
 - チケット番号がある場合: `.claude/tasks/<チケット番号>/`
@@ -96,6 +108,7 @@ YYYY_MMDD_HHMM_<ドキュメント種別>.md
 ### Command（コマンドでの呼び出し用）
 
 - `claude/commands/plan.create.md` - `/plan.create`
+- `claude/commands/tasks.execute.md` - `/tasks.execute`
 
 ## 参考
 

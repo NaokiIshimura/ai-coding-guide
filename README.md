@@ -68,109 +68,50 @@ make install
 ls ~/.claude/
 ```
 
-## Skills（スキル）
+## ワークフロー
 
-Claudeが自動的に使用するスキルです。
+### 新機能開発の基本フロー
 
-| スキル名 | 説明 | 出力ファイル |
-|----------|------|-------------|
-| `plan-create` | 実装計画を作成（統合SKILL） | requirements.md, design.md, tasks.md |
-| `requirements-writer` | 仕様書を作成 | requirements.md |
-| `design-writer` | 設計書を作成 | design.md |
-| `tasks-writer` | タスクリストを作成 | tasks.md |
+```
+/plan.create          # 実装計画を作成（requirements/design/tasks.md）
+     ↓
+/tasks.execute        # tasks.mdに基づいて順次実装
+     ↓
+/git.commit.push.pr   # コミット・プッシュ・PR作成
+     ↓
+/pr.comment.resolve   # レビューコメントへの対応
+```
 
-## Agents（エージェント）
+### JIRAチケットからの開発フロー
 
-Taskツール経由で呼び出すエージェントです。詳細は [claude/AGENTS.md](claude/AGENTS.md) を参照してください。
+```
+/jira.issue.develop   # JIRAチケットから実装計画作成＆開発
+     ↓
+/git.commit.push.pr   # コミット・プッシュ・PR作成
+     ↓
+/jira.issue.feedback  # JIRAチケットへフィードバック
+```
 
-### 実装計画作成
+### 計画ベースの開発フロー
 
-| エージェント | 説明 |
-|-------------|------|
-| `plan-create` | 実装計画作成（requirements/design/tasks統合作成） |
-| `requirements-writer` | 仕様書作成 |
-| `design-writer` | 設計書作成 |
-| `tasks-writer` | タスクリスト作成 |
+```
+/plan.create                      # 実装計画を作成
+     ↓
+/tasks.execute <tasks.md>         # タスクを順次実装
+     ↓
+/git.commit                       # コミット
+     ↓
+/tasks.execute <tasks.md>         # 残りのタスクを実装
+     ↓
+/git.commit.push.pr               # 最終コミット＆PR作成
+```
 
-### コード関連
+### 作業再開時のフロー
 
-| エージェント | 説明 |
-|-------------|------|
-| `code-collector` | ソースコード情報収集 |
-| `code-implementer` | コード実装 |
-| `code-reviewer` | コードレビュー |
-| `debugger` | デバッグ |
-
-### 情報収集
-
-| エージェント | 説明 |
-|-------------|------|
-| `file-collector` | ファイル情報収集 |
-| `web-collector` | Web情報収集 |
-| `confluence-collector` | Confluence情報収集 |
-| `jira-collector` | JIRA情報収集 |
-| `pr-collector` | Pull Request情報収集 |
-| `slack-collector` | Slack情報収集 |
-
-### データ分析
-
-| エージェント | 説明 |
-|-------------|------|
-| `data-scientist` | SQLクエリ、データ分析 |
-
-### Claude Comment管理
-
-| エージェント | 説明 |
-|-------------|------|
-| `claude-comment-finder` | @claudeコメント検出 |
-| `claude-comment-executor` | @claudeコメント実行 |
-| `claude-comment-cleaner` | @claudeコメントクリーンアップ |
-
-## Commands（コマンド）
-
-`/`で呼び出すコマンドです。詳細は [claude/COMMANDS.md](claude/COMMANDS.md) を参照してください。
-
-### 実装計画
-
-| コマンド | 説明 |
-|----------|------|
-| `/plan.create` | 実装計画（requirements/design/tasks）を作成 |
-| `/md.output.spec` | 作業状況から実装計画を出力 |
-
-### 開発
-
-| コマンド | 説明 |
-|----------|------|
-| `/jira.issue.develop` | JIRAチケットから開発を実施 |
-| `/md.develop` | markdownファイルから開発を実施 |
-
-### Git操作
-
-| コマンド | 説明 |
-|----------|------|
-| `/git.branch` | ブランチ作成・切り替え |
-| `/git.commit` | コミット作成 |
-| `/git.push` | プッシュ |
-| `/git.commit.push` | コミット＆プッシュ |
-| `/git.commit.push.pr` | コミット＆プッシュ＆PR作成 |
-| `/git.pull` | プル |
-| `/git.pull.default` | デフォルトブランチからプル＆マージ |
-
-### PR操作
-
-| コマンド | 説明 |
-|----------|------|
-| `/pr.create` | PR作成 |
-| `/pr.update` | PR説明更新 |
-| `/pr.comment.check` | PRコメント確認 |
-| `/pr.comment.resolve` | PRコメント対応 |
-
-### その他
-
-| コマンド | 説明 |
-|----------|------|
-| `/claude.comment` | @claudeコメント管理 |
-| `/md.input` | markdownファイル読み込み |
-| `/md.output` | 作業状況をmarkdown出力 |
-| `/task.init` | タスクディレクトリ初期化 |
-| `/jira.issue.feedback` | JIRAチケットへフィードバック |
+```
+/md.input             # 過去の作業状況を確認
+     ↓
+/git.pull.default     # デフォルトブランチの最新を取得
+     ↓
+/tasks.execute        # 残りのタスクを実装
+```
