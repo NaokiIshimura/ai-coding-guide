@@ -45,10 +45,10 @@ requirements-writer、design-writer、tasks-writerの3つのスキルを順番�
 
 2. **タイムスタンプを生成（日本時間）**
    ```bash
-   TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M'
+   TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'
    ```
-   - フォーマット: `YYYY_MMDD_HHMM`
-   - 例: 2025年01月02日03時04分の場合 → `2025_0102_0304`
+   - フォーマット: `YYYY_MMDD_HHMM_SS`
+   - 例: 2025年01月02日03時04分05秒の場合 → `2025_0102_0304_05`
 
 ### Step 2: 仕様書作成
 
@@ -99,9 +99,9 @@ requirements-writer、design-writer、tasks-writerの3つのスキルを順番�
 
 ```
 .claude/tasks/<識別子>/
-├── YYYY_MMDD_HHMM_requirements.md  # 仕様書
-├── YYYY_MMDD_HHMM_design.md        # 設計書
-└── YYYY_MMDD_HHMM_tasks.md         # タスクリスト
+├── YYYY_MMDD_HHMM_SS_requirements.md  # 仕様書
+├── YYYY_MMDD_HHMM_SS_design.md        # 設計書
+└── YYYY_MMDD_HHMM_SS_tasks.md         # タスクリスト
 ```
 
 ## 注意事項

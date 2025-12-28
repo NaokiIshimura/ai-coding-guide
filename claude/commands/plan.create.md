@@ -1,5 +1,5 @@
 ---
-allowed-tools: Write, Read, Bash(git:*), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M'), Bash(mkdir:*), Glob, Grep, Task
+allowed-tools: Write, Read, Bash(git:*), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Bash(mkdir:*), Glob, Grep, Task
 description: 実装計画（requirements/design/tasks.md）を作成する
 ---
 
@@ -29,7 +29,7 @@ description: 実装計画（requirements/design/tasks.md）を作成する
 
 3. **タイムスタンプの生成**
    ```bash
-   TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M'
+   TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'
    ```
 
 4. **実装計画ドキュメントの作成**
@@ -59,9 +59,9 @@ description: 実装計画（requirements/design/tasks.md）を作成する
 
 ```
 .claude/tasks/<識別子>/
-├── YYYY_MMDD_HHMM_requirements.md  # 仕様書
-├── YYYY_MMDD_HHMM_design.md        # 設計書
-└── YYYY_MMDD_HHMM_tasks.md         # タスクリスト
+├── YYYY_MMDD_HHMM_SS_requirements.md  # 仕様書
+├── YYYY_MMDD_HHMM_SS_design.md        # 設計書
+└── YYYY_MMDD_HHMM_SS_tasks.md         # タスクリスト
 ```
 
 ### ドキュメント間の参照関係

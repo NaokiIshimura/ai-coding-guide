@@ -1,5 +1,5 @@
 ---
-allowed-tools: Write, Read, Bash(git:*), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M'), Glob, Grep, Task
+allowed-tools: Write, Read, Bash(git:*), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Glob, Grep, Task
 description: 実装計画作成（requirements/design/tasks.md）を出力する
 ---
 
@@ -42,10 +42,10 @@ description: 実装計画作成（requirements/design/tasks.md）を出力する
 
 5. **ファイル名の生成**
    - タイムスタンプを含むファイル名を生成：
-     - `YYYY_MMDD_HHMM_requirements.md`
-     - `YYYY_MMDD_HHMM_design.md`
-     - `YYYY_MMDD_HHMM_tasks.md`
-   - タイムスタンプは日本時間: `TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M'`
+     - `YYYY_MMDD_HHMM_SS_requirements.md`
+     - `YYYY_MMDD_HHMM_SS_design.md`
+     - `YYYY_MMDD_HHMM_SS_tasks.md`
+   - タイムスタンプは日本時間: `TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'`
 
 6. **出力完了の報告**
    - 出力した各ファイルのパス
@@ -55,7 +55,7 @@ description: 実装計画作成（requirements/design/tasks.md）を出力する
 ### 注意事項
 
 - **機密情報の保護**: パスワード、APIキー、トークンなどの機密情報は出力しない
-- **タイムスタンプ**: 必ず日本時間のタイムスタンプを使用（`TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M'`）
+- **タイムスタンプ**: 必ず日本時間のタイムスタンプを使用（`TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'`）
 - **構造化**: 読みやすく構造化されたフォーマットを使用
 - **一貫性**: 他のドキュメントと一貫性のある形式を使用
 - **バージョン管理**: 新しいタイムスタンプのファイルとして保存し、既存ファイルは上書きしない

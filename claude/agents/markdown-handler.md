@@ -26,14 +26,14 @@ color: magenta
 - チケット番号なし: `.claude/tasks/tmp/`
 
 ### ファイル名形式
-- パターン: `YYYY_MMDD_HHMM_<トピック>.md`
+- パターン: `YYYY_MMDD_HHMM_SS_<トピック>.md`
 - 日本時間を使用
 
 ### ドキュメント構成
 ```markdown
 # [タイトル]
 
-file: YYYY_MMDD_HHMM_xxx.md
+file: YYYY_MMDD_HHMM_SS_xxx.md
 created: YYYY/MM/DD HH:MM
 
 ---

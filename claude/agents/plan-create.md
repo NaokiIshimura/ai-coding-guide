@@ -13,7 +13,7 @@ requirements-writer、design-writer、tasks-writerの3つのエージェント�
 
 - **Web情報収集の禁止**: MCPツールを使用せずに外部Webサイトから情報を収集することは禁止されています。ローカルファイルシステムの情報のみを収集対象としてください
 - **日本語での記述**: すべてのドキュメントは日本語で記述してください
-- **タイムスタンプ付きファイル名**: ファイル名の先頭に日本時間のタイムスタンプを付けてください（YYYY_MMDD_HHMM形式）
+- **タイムスタンプ付きファイル名**: ファイル名の先頭に日本時間のタイムスタンプを付けてください（YYYY_MMDD_HHMM_SS形式）
 
 ## 概要
 
@@ -43,7 +43,7 @@ requirements-writer、design-writer、tasks-writerの3つのエージェント�
 
 2. **タイムスタンプを生成（日本時間）**
    ```bash
-   TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M'
+   TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'
    ```
 
 ### Step 2: 仕様書作成
@@ -75,9 +75,9 @@ requirements-writer、design-writer、tasks-writerの3つのエージェント�
 
 ```
 .claude/tasks/<識別子>/
-├── YYYY_MMDD_HHMM_requirements.md  # 仕様書
-├── YYYY_MMDD_HHMM_design.md        # 設計書
-└── YYYY_MMDD_HHMM_tasks.md         # タスクリスト
+├── YYYY_MMDD_HHMM_SS_requirements.md  # 仕様書
+├── YYYY_MMDD_HHMM_SS_design.md        # 設計書
+└── YYYY_MMDD_HHMM_SS_tasks.md         # タスクリスト
 ```
 
 ## ドキュメント間の参照関係
