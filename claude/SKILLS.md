@@ -20,21 +20,30 @@
 | `design-writer` | 設計書を作成 | design.md |
 | `tasks-writer` | タスクリストを作成 | tasks.md |
 | `tasks-execute` | tasks.mdに基づいてタスクを実行 | 更新されたtasks.md, 実装コード |
+| `git` | gitを操作する（branch, commit, push, pull） | - |
+| `markdown` | markdownファイルを操作する（output, input） | markdownファイル |
+| `pull-request` | プルリクエストを操作する（create, update, comment resolve） | - |
 
 ## ディレクトリ構成
 
 ```
-.claude/skills/
-├── plan-create/
-│   └── SKILL.md                   # 実装計画作成スキル（統合）
-├── requirements-writer/
-│   └── SKILL.md                   # 仕様書作成スキル
+claude/skills/
 ├── design-writer/
 │   └── SKILL.md                   # 設計書作成スキル
-├── tasks-writer/
-│   └── SKILL.md                   # タスクリスト作成スキル
-└── tasks-execute/
-    └── SKILL.md                   # タスク実行スキル
+├── git/
+│   └── SKILL.md                   # git操作スキル
+├── markdown/
+│   └── SKILL.md                   # markdown入出力スキル
+├── plan-create/
+│   └── SKILL.md                   # 実装計画作成スキル（統合）
+├── pull-request/
+│   └── SKILL.md                   # プルリクエスト操作スキル
+├── requirements-writer/
+│   └── SKILL.md                   # 仕様書作成スキル
+├── tasks-execute/
+│   └── SKILL.md                   # タスク実行スキル
+└── tasks-writer/
+    └── SKILL.md                   # タスクリスト作成スキル
 ```
 
 ## スキルの使用方法
@@ -102,6 +111,38 @@ tasks.mdに基づいてタスクを実行するスキル。以下のトリガー
 - 計画されたタスクを順番に実装する時
 - 「タスクを実行して」「実装を進めて」と言われた時
 - 「次のタスクをやって」と言われた時
+
+### git
+
+gitリポジトリの操作を行うスキル。以下のトリガーで自動的に呼び出されます：
+
+- ブランチの作成・切り替えが必要な時
+- コミットを作成する時
+- プッシュ・プルを行う時
+- 「ブランチを作って」「コミットして」「プッシュして」と言われた時
+
+**対応操作:** branch, commit, push, pull
+
+### markdown
+
+markdownファイルの入出力を行うスキル。以下のトリガーで自動的に呼び出されます：
+
+- 作業状況をファイルに出力する時
+- 過去の作業履歴を読み込む時
+- 「作業状況を出力して」「履歴を読み込んで」と言われた時
+
+**対応操作:** output, input
+
+### pull-request
+
+GitHubプルリクエストの操作を行うスキル。以下のトリガーで自動的に呼び出されます：
+
+- PRを作成する時
+- PRのdescriptionを更新する時
+- レビューコメントに対応する時
+- 「PRを作って」「PRを更新して」「コメントに対応して」と言われた時
+
+**対応操作:** create, update, comment resolve
 
 ## 出力先
 
