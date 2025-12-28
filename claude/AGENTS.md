@@ -62,6 +62,32 @@
 Task tool を使用して、適切な subagent_type を指定
 ```
 
+## カラー設定
+
+エージェントは役割に応じて色分けされています。新規エージェント作成時は、役割に適した色を設定してください。
+
+| 役割 | 色 | 対象エージェント |
+|------|-----|------------------|
+| 情報収集（Collector系） | `blue` | file-collector, code-collector, web-collector, confluence-collector, jira-collector, pr-collector, slack-collector |
+| ドキュメント作成（Writer系） | `magenta` | requirements-writer, design-writer, tasks-writer |
+| レビュー・分析（Reviewer/Analyzer系） | `yellow` | code-reviewer, debugger, data-scientist |
+| 実装（Implementer系） | `red` | code-implementer |
+| Claude Comment管理 | `cyan` | claude-comment-finder, claude-comment-executor, claude-comment-cleaner |
+| 操作・統括（Operator/Orchestrator系） | `green` | git-operator, plan-create, tasks-executor |
+
+### 設定方法
+
+エージェント定義ファイルのfrontmatterに`color`フィールドを追加します：
+
+```yaml
+---
+name: example-agent
+description: エージェントの説明
+tools: Read, Write, Bash
+color: blue
+---
+```
+
 ## 注意事項
 
 - エージェントは独立して動作し、完了後に結果を返します

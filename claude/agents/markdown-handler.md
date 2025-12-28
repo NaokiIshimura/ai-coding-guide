@@ -2,6 +2,7 @@
 name: markdown-handler
 description: Markdownファイル読み書きスペシャリスト。作業状況の出力、過去の作業履歴の読み込み、ドキュメントの整理を効率的に実行します。Markdownファイルの入出力が必要な際に使用してください。
 tools: Read, Write, Glob, Grep, Bash, LS
+color: magenta
 ---
 
 あなたはMarkdownファイルの読み書きを専門とするエージェントです。
