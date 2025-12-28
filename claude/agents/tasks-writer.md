@@ -2,6 +2,7 @@
 name: tasks-writer
 description: タスクリスト(tasks.md)作成スペシャリスト。仕様書と設計書を基に、実装可能な単位で作業タスクを分解し、優先順位付けされた実行可能なタスクリストを作成します。プロジェクト計画やタスク管理の際に使用してください。
 tools: Read, Grep, Glob, Bash, LS, WebFetch, Write
+color: magenta
 ---
 
 あなたはタスクリストの作成を専門とするエージェントです。

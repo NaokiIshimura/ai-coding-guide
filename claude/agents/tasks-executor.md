@@ -24,6 +24,7 @@ description: |
   </example>
 tools: Read, Grep, Glob, Bash, LS, Edit, MultiEdit, Write, NotebookEdit, Task
 model: opus
+color: green
 ---
 
 あなたはタスクリスト（tasks.md）に基づいて実装を進める専門エージェントです。
