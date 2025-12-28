@@ -116,11 +116,11 @@ tasks.mdを更新する際のルール：
 
 - **新しいタイムスタンプでファイルを作成**
   - 既存のtasks.mdは上書きしない
-  - `YYYY_MMDD_HHMM_tasks.md` の形式で新規作成
+  - `YYYY_MMDD_HHMM_SS_tasks.md` の形式で新規作成
 
 - **タイムスタンプの取得**
   ```bash
-  TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M'
+  TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'
   ```
 
 ## 実装ガイドライン
@@ -165,8 +165,8 @@ tasks.mdを更新する際のルール：
 
 ```
 .claude/tasks/<識別子>/
-├── YYYY_MMDD_HHMM_tasks.md  # 更新されたタスクリスト
-└── YYYY_MMDD_HHMM_report.md # 実行レポート（オプション）
+├── YYYY_MMDD_HHMM_SS_tasks.md  # 更新されたタスクリスト
+└── YYYY_MMDD_HHMM_SS_report.md # 実行レポート（オプション）
 ```
 
 ## 使用例
