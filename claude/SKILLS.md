@@ -23,6 +23,7 @@
 | `git` | gitを操作する（branch, commit, push, pull） | - |
 | `markdown` | markdownファイルを操作する（output, input） | markdownファイル |
 | `pull-request` | プルリクエストを操作する（create, update, comment resolve） | - |
+| `qiita` | Qiita投稿用の記事を作成 | YYYY_MMDD_HHMM_SS_qiita_<トピック>.md |
 
 ## ディレクトリ構成
 
@@ -38,6 +39,8 @@ claude/skills/
 │   └── SKILL.md                   # 実装計画作成スキル（統合）
 ├── pull-request/
 │   └── SKILL.md                   # プルリクエスト操作スキル
+├── qiita/
+│   └── SKILL.md                   # Qiita記事作成スキル
 ├── requirements-writer/
 │   └── SKILL.md                   # 仕様書作成スキル
 ├── tasks-execute/
@@ -143,6 +146,18 @@ GitHubプルリクエストの操作を行うスキル。以下のトリガー�
 - 「PRを作って」「PRを更新して」「コメントに対応して」と言われた時
 
 **対応操作:** create, update, comment resolve
+
+### qiita
+
+Qiita投稿用の記事を作成するスキル。以下のトリガーで自動的に呼び出されます：
+
+- Qiita記事を作成する時
+- 技術記事を執筆する時
+- 「Qiita記事を書いて」「記事を作成して」と言われた時
+
+**記事構成:** はじめに、3行まとめ、メインコンテンツ、まとめ、参考リンク
+
+**記法:** Qiita公式記法ガイド（https://qiita.com/Qiita/items/c686397e4a0f4f11683d）に準拠
 
 ## 出力先
 
