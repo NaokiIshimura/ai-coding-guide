@@ -14,7 +14,8 @@
       "Bash(colima:*)",
       "mcp__*",
       "Bash(code:*)",
-      "Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M')"
+      "Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M')",
+      "Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S')"
     ],
     "deny": [
       "Read(/coverage/)"
