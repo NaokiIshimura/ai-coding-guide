@@ -26,19 +26,19 @@ description: 実装計画に基づいて実装を開始する
 2. **実装計画ファイルの検索と検証**
    - ディレクトリ内の最新の plan.md を検索
      ```bash
-     ls -t <ディレクトリ>/*_plan.md | head -1
+     ls -t <ディレクトリ>/*plan*.md 2>/dev/null | head -1
      ```
    - ディレクトリ内の最新の requirements.md を検索
      ```bash
-     ls -t <ディレクトリ>/*_requirements.md | head -1
+     ls -t <ディレクトリ>/*requirements*.md 2>/dev/null | head -1
      ```
    - ディレクトリ内の最新の design.md を検索
      ```bash
-     ls -t <ディレクトリ>/*_design.md | head -1
+     ls -t <ディレクトリ>/*design*.md 2>/dev/null | head -1
      ```
    - ディレクトリ内の最新の tasks.md を検索
      ```bash
-     ls -t <ディレクトリ>/*_tasks.md | head -1
+     ls -t <ディレクトリ>/*tasks*.md 2>/dev/null | head -1
      ```
    - いずれかのファイルが存在しない場合は警告を表示し、続行するか確認を取得
 
