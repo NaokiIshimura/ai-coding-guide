@@ -10,9 +10,22 @@ project_dir=$(echo "$input" | jq -r '.workspace.project_dir')
 username=$(whoami)
 
 # Token usage information
-total_input=$(echo "$input" | jq -r '.context_window.total_input_tokens // 0')
-total_output=$(echo "$input" | jq -r '.context_window.total_output_tokens // 0')
-context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 0')
+# Try to use pre-calculated percentage from Claude Code
+usage_percent=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
+
+# Fallback to manual calculation if used_percentage is not available
+if [ -z "$usage_percent" ] || [ "$usage_percent" = "null" ]; then
+    total_input=$(echo "$input" | jq -r '.context_window.total_input_tokens // 0')
+    total_output=$(echo "$input" | jq -r '.context_window.total_output_tokens // 0')
+    context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 0')
+
+    if [ "$context_size" -gt 0 ] 2>/dev/null; then
+        total_tokens=$((total_input + total_output))
+        usage_percent=$((total_tokens * 100 / context_size))
+    else
+        usage_percent=0
+    fi
+fi
 
 # Colors for better readability (brighter colors for improved visibility)
 RESET='\033[0m'
@@ -245,12 +258,10 @@ esac
 
 # Context usage display with progress bar
 context_info=""
-usage_percent=0
 progress_bar=""
-if [ "$context_size" -gt 0 ] 2>/dev/null; then
-    total_tokens=$((total_input + total_output))
-    usage_percent=$((total_tokens * 100 / context_size))
-    # Cap at 100%
+# Display context usage even if it's 0% (change -gt to -ge)
+if [ "$usage_percent" -ge 0 ] 2>/dev/null; then
+    # Cap at 100% for safety
     if [ "$usage_percent" -gt 100 ]; then
         usage_percent=100
     fi
