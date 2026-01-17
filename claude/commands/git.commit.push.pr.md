@@ -5,6 +5,6 @@ description: gitコミット、プッシュ、プルリクエスト作成を実�
 
 ## タスク
 
-1. [@git-commit.md](git-commit.md) を実行してください
-2. [@git-push.md](git-push.md) を実行してください
-3. [@pr-create.md](pr-create.md) を実行してください
+1. [@git.commit.md](git.commit.md) を実行してください
+2. [@git.push.md](git.push.md) を実行してください
+3. [@pr.create.md](pr.create.md) を実行してください
