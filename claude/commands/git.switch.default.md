@@ -1,12 +1,12 @@
 ---
-allowed-tools: Bash(git switch:*), Bash(git checkout:*), Bash(git pull:*), Bash(git status:*), Bash(git branch:*)
+allowed-tools: Bash(git switch:*), Bash(git checkout:*), Bash(git pull:*), Bash(git status:*), Bash(git branch:*), Bash(git symbolic-ref:*)
 description: デフォルトブランチに切り替えて最新を取得する
 ---
 
 ## コンテキスト
 
 - 現在のブランチ: !`git branch --show-current`
-- デフォルトブランチ: !`git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'`
+- デフォルトブランチ: !`git symbolic-ref --short refs/remotes/origin/HEAD`
 - 現在のステータス: !`git status -sb`
 
 ## タスク
