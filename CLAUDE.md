@@ -70,11 +70,20 @@ This rule is documented in `CMAUDE.md` at the project root.
 /jira.issue.feedback     # Post feedback to JIRA ticket
 ```
 
+### Spec-Based Development
+
+```bash
+/spec.create            # Create requirements.md, design.md, tasks.md
+/tasks.execute          # Implement tasks from tasks.md
+/git.commit.push.pr     # Commit, push, create PR
+/pr.comment.resolve     # Address review comments
+```
+
 ### Plan-Based Development
 
 ```bash
-/plan.create             # Create requirements.md, design.md, tasks.md
-/tasks.execute          # Implement tasks from tasks.md
+/plan.create            # Create plan.md (execution plan)
+/tasks.execute          # Implement according to plan
 /git.commit.push.pr     # Commit, push, create PR
 /pr.comment.resolve     # Address review comments
 ```
@@ -130,7 +139,7 @@ Agents are color-coded by role:
 - **Yellow**: Reviewers/Analyzers (code-reviewer, debugger, data-scientist)
 - **Red**: Implementers (code-implementer)
 - **Cyan**: Claude Comment managers (claude-comment-finder, executor, cleaner)
-- **Green**: Operators/Orchestrators (git-operator, plan-create, tasks-executor)
+- **Green**: Operators/Orchestrators (git-operator, plan-create, spec-create, tasks-executor)
 
 ## Common Tasks Reference
 

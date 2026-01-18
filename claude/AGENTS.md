@@ -35,13 +35,14 @@
 |-------------|------|----------|
 | `data-scientist` | データ分析専門家 | SQLクエリ実行、データ分析レポート作成、BigQueryデータ抽出 |
 
-### 実装計画作成
+### 実装計画・仕様書作成
 
 | エージェント | 説明 | 主な用途 |
 |-------------|------|----------|
 | `markdown-handler` | Markdownファイル読み書きスペシャリスト | 作業状況出力、作業履歴読み込み、ドキュメント整理 |
-| `plan-create` | 実装計画作成スペシャリスト | requirements/design/tasks統合作成、実装計画立案 |
-| `requirements-writer` | 仕様書作成スペシャリスト | 要件定義書作成、機能仕様整理、ユーザーストーリー作成 |
+| `plan-create` | 実行計画作成スペシャリスト | plan.md作成、ステップバイステップ実行計画立案 |
+| `spec-create` | 仕様書作成スペシャリスト | requirements/design/tasks統合作成、包括的仕様書作成 |
+| `requirements-writer` | 要件定義書作成スペシャリスト | 要件定義書作成、機能仕様整理、ユーザーストーリー作成 |
 | `design-writer` | 設計書作成スペシャリスト | アーキテクチャ設計書作成、詳細設計書作成、技術仕様書作成 |
 | `tasks-writer` | タスクリスト作成スペシャリスト | タスク分解、優先順位付け、実装計画作成 |
 | `tasks-executor` | タスク実行スペシャリスト | tasks.mdに基づく順次実装、計画ベースの開発 |
@@ -73,7 +74,7 @@ Task tool を使用して、適切な subagent_type を指定
 | レビュー・分析（Reviewer/Analyzer系） | `yellow` | code-reviewer, debugger, data-scientist |
 | 実装（Implementer系） | `red` | code-implementer |
 | Claude Comment管理 | `cyan` | claude-comment-finder, claude-comment-executor, claude-comment-cleaner |
-| 操作・統括（Operator/Orchestrator系） | `green` | git-operator, plan-create, tasks-executor |
+| 操作・統括（Operator/Orchestrator系） | `green` | git-operator, plan-create, spec-create, tasks-executor |
 
 ### 設定方法
 

@@ -27,6 +27,9 @@
 ## speckit
 @~/ai-coding-guide/guides/speckit.md
 
+## plan-spec
+@~/ai-coding-guide/guides/plan-spec.md
+
 ---
 
 # sub-agent
@@ -35,4 +38,4 @@
 - sub-agentの実行結果は一時的ファイルとしてmdファイルを出力するようにしてください
 
 ## ファイル読み込み
-- 大きなファイルを読み込む必要がある場合は、メインタスクのコンテクストを圧迫しないように、sub-agentを利用してください
+- 大きなファイルを読み込む必要がある場合は、メインセッションのコンテクストを圧迫しないように、sub-agentを利用してください
