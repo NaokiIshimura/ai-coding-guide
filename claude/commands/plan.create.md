@@ -41,7 +41,7 @@ description: 実行計画（plan.md）を作成する
    - 既存の仕様書（requirements.md、design.md、tasks.md）があれば参照
 
    **b) 計画作成**
-   - Taskツールで `plan-create` エージェントを呼び出し
+   - Taskツールで `plan-writer` エージェントを呼び出し
    - または直接作成
    - 出力: `<タイムスタンプ>_plan.md`
 

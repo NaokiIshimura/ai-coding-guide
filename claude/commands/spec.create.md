@@ -33,22 +33,12 @@ description: 仕様書（requirements/design/tasks.md）を作成する
    ```
 
 4. **仕様書ドキュメントの作成**
-   以下の3つのドキュメントを順番に作成：
-
-   **a) 要件定義書（requirements.md）**
-   - Taskツールで `requirements-writer` エージェントを呼び出し
-   - または直接作成
-   - 出力: `<タイムスタンプ>_requirements.md`
-
-   **b) 設計書（design.md）**
-   - Taskツールで `design-writer` エージェントを呼び出し
-   - 要件定義書を参照して作成
-   - 出力: `<タイムスタンプ>_design.md`
-
-   **c) タスクリスト（tasks.md）**
-   - Taskツールで `tasks-writer` エージェントを呼び出し
-   - 要件定義書・設計書を参照して作成
-   - 出力: `<タイムスタンプ>_tasks.md`
+   - Taskツールで `spec-writer` エージェントを呼び出し
+   - 収集した情報を基に3つのドキュメントを統合的に作成
+   - 出力:
+     - `<タイムスタンプ>_requirements.md`
+     - `<タイムスタンプ>_design.md`
+     - `<タイムスタンプ>_tasks.md`
 
 5. **出力完了の報告**
    - 出力した各ファイルのパス

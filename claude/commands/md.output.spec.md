@@ -31,7 +31,7 @@ description: 実装計画作成（requirements/design/tasks.md）を出力する
    - チケット番号が不明な場合は `.claude/plans/tmp/` を使用
 
 4. **実装計画ドキュメントの作成**
-   - Taskツールで `plan-create` エージェントを呼び出し、以下の3つのドキュメントを作成：
+   - Taskツールで `spec-writer` エージェントを呼び出し、以下の3つのドキュメントを作成：
      1. 仕様書（requirements.md）
      2. 設計書（design.md）
      3. タスクリスト（tasks.md）
