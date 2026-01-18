@@ -1,18 +1,18 @@
 ---
 allowed-tools: Bash(mkdir:*), Bash(ls:*), Bash(cat:*), Bash(git:*), Read, Write
-description: .claude/tasks配下にタスク用ディレクトリを準備する
+description: .claude/plans配下にタスク用ディレクトリを準備する
 ---
 
 ## コンテキスト
 
 - 現在のブランチ: !`git branch --show-current`
 - 現在のディレクトリ: !`pwd`
-- 既存のtasksディレクトリ: !`ls -la .claude/tasks/ 2>/dev/null || echo "tasks directory not found"`
+- 既存のtasksディレクトリ: !`ls -la .claude/plans/ 2>/dev/null || echo "tasks directory not found"`
 
 ## タスク
 
 新しいタスクを開始するための準備を行ってください。
-具体的には、`.claude/tasks`配下に指定された名前のディレクトリを作成し、タスクに必要なマークダウンファイルを準備します。
+具体的には、`.claude/plans`配下に指定された名前のディレクトリを作成し、タスクに必要なマークダウンファイルを準備します。
 
 ### 実施手順
 
@@ -22,7 +22,7 @@ description: .claude/tasks配下にタスク用ディレクトリを準備する
    - チケット番号（例: ABC-123）またはtmpなどの任意の名前を受け付ける
 
 2. **ディレクトリの確認と作成**
-   - `.claude/tasks`ディレクトリが存在しない場合は作成
+   - `.claude/plans`ディレクトリが存在しない場合は作成
    - 指定されたディレクトリが既に存在する場合は通知
    - 存在しない場合は新規作成
 
@@ -37,7 +37,7 @@ description: .claude/tasks配下にタスク用ディレクトリを準備する
 
 4. **作成結果の報告**
    - 作成したディレクトリの絶対パス
-   - ディレクトリの一覧表示（`ls -la .claude/tasks/`）
+   - ディレクトリの一覧表示（`ls -la .claude/plans/`）
    - マークダウンファイルの状態（存在する場合は内容、存在しない場合は新規作成したこと）
 
 ### 使用例

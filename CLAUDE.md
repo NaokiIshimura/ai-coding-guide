@@ -103,8 +103,8 @@ All generated markdown files follow these conventions:
 
 - **Timestamp format**: `YYYY_MMDD_HHMM_SS_<topic>.md` (Japan time)
 - **Output location**:
-  - With ticket number: `.claude/tasks/<ticket-number>/`
-  - Without ticket number: `.claude/tasks/tmp/`
+  - With ticket number: `.claude/plans/<ticket-number>/`
+  - Without ticket number: `.claude/plans/tmp/`
 - **File endings**: All files must end with a blank line
 
 ## Important Guidelines

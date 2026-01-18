@@ -51,8 +51,8 @@
 ### 例
 #### claude code
 ```
-.claude/tasks/<チケット番号>/xxx.md
-.claude/tasks/tmp/xxx.md
+.claude/plans/<チケット番号>/xxx.md
+.claude/plans/tmp/xxx.md
 ```
 
 #### cline

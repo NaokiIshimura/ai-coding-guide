@@ -269,5 +269,5 @@ color: magenta
 - コード内ドキュメントとの整合性
 
 ファイル出力場所：
-- チケット番号が与えられている場合: `.claude/tasks/<チケット番号>/<タイムスタンプ>_design.md`
-- チケット番号が与えられていない場合: `.claude/tasks/tmp/<タイムスタンプ>_design.md`
+- チケット番号が与えられている場合: `.claude/plans/<チケット番号>/<タイムスタンプ>_design.md`
+- チケット番号が与えられていない場合: `.claude/plans/tmp/<タイムスタンプ>_design.md`

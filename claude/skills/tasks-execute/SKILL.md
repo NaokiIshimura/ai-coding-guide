@@ -164,7 +164,7 @@ tasks.mdを更新する際のルール：
 ## 出力ファイル
 
 ```
-.claude/tasks/<識別子>/
+.claude/plans/<識別子>/
 ├── YYYY_MMDD_HHMM_SS_tasks.md  # 更新されたタスクリスト
 └── YYYY_MMDD_HHMM_SS_report.md # 実行レポート（オプション）
 ```
@@ -174,7 +174,7 @@ tasks.mdを更新する際のルール：
 ### 基本的な使用
 
 ```
-ユーザー: /tasks.execute .claude/tasks/ABC-123/2025_0102_0304_tasks.md
+ユーザー: /tasks.execute .claude/plans/ABC-123/2025_0102_0304_tasks.md
 
 実行結果:
 - TASK-001 を実行完了
@@ -186,7 +186,7 @@ tasks.mdを更新する際のルール：
 ### 特定のタスクから開始
 
 ```
-ユーザー: /tasks.execute .claude/tasks/ABC-123/2025_0102_0304_tasks.md TASK-003
+ユーザー: /tasks.execute .claude/plans/ABC-123/2025_0102_0304_tasks.md TASK-003
 
 実行結果:
 - TASK-003 から実行開始

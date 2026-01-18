@@ -8,14 +8,14 @@
 - **重要**: コードを書き始める前に、まず要件を整理し、設計を行い、タスクを分解してください
 
 ### ファイル出力の基本ルール
-- **重要**: 全ての計画・仕様ファイルは`.claude/tasks/`配下に出力してください
+- **重要**: 全ての計画・仕様ファイルは`.claude/plans/`配下に出力してください
 - **重要**: ファイル名には必ずタイムスタンプを付けてください（YYYY_MMDD_HHMM_SS形式、日本時間）
 - **重要**: ファイルの内容は日本語で記述してください
 - ファイル末尾は必ず空行で終わるようにしてください
 
 ### 出力先ディレクトリ
-- チケット番号がある場合: `.claude/tasks/<チケット番号>/`
-- チケット番号がない場合: `.claude/tasks/tmp/`
+- チケット番号がある場合: `.claude/plans/<チケット番号>/`
+- チケット番号がない場合: `.claude/plans/tmp/`
 
 ---
 
@@ -29,7 +29,7 @@
 
 ### ファイル名形式
 ```
-.claude/tasks/<ticket-or-tmp>/YYYY_MMDD_HHMM_SS_plan.md
+.claude/plans/<ticket-or-tmp>/YYYY_MMDD_HHMM_SS_plan.md
 ```
 
 ### 含めるべき内容
@@ -52,7 +52,7 @@
 
 #### ファイル名形式
 ```
-.claude/tasks/<ticket-or-tmp>/YYYY_MMDD_HHMM_SS_requirements.md
+.claude/plans/<ticket-or-tmp>/YYYY_MMDD_HHMM_SS_requirements.md
 ```
 
 #### 含めるべき内容
@@ -73,7 +73,7 @@
 
 #### ファイル名形式
 ```
-.claude/tasks/<ticket-or-tmp>/YYYY_MMDD_HHMM_SS_design.md
+.claude/plans/<ticket-or-tmp>/YYYY_MMDD_HHMM_SS_design.md
 ```
 
 #### 含めるべき内容
@@ -94,7 +94,7 @@
 
 #### ファイル名形式
 ```
-.claude/tasks/<ticket-or-tmp>/YYYY_MMDD_HHMM_SS_tasks.md
+.claude/plans/<ticket-or-tmp>/YYYY_MMDD_HHMM_SS_tasks.md
 ```
 
 #### 含めるべき内容
@@ -110,18 +110,18 @@
 
 ### チケット番号がある場合
 ```
-.claude/tasks/ABC-123/2026_0118_1030_45_plan.md
-.claude/tasks/ABC-123/2026_0118_1030_50_requirements.md
-.claude/tasks/ABC-123/2026_0118_1031_15_design.md
-.claude/tasks/ABC-123/2026_0118_1031_30_tasks.md
+.claude/plans/ABC-123/2026_0118_1030_45_plan.md
+.claude/plans/ABC-123/2026_0118_1030_50_requirements.md
+.claude/plans/ABC-123/2026_0118_1031_15_design.md
+.claude/plans/ABC-123/2026_0118_1031_30_tasks.md
 ```
 
 ### チケット番号がない場合
 ```
-.claude/tasks/tmp/2026_0118_1030_45_plan.md
-.claude/tasks/tmp/2026_0118_1030_50_requirements.md
-.claude/tasks/tmp/2026_0118_1031_15_design.md
-.claude/tasks/tmp/2026_0118_1031_30_tasks.md
+.claude/plans/tmp/2026_0118_1030_45_plan.md
+.claude/plans/tmp/2026_0118_1030_50_requirements.md
+.claude/plans/tmp/2026_0118_1031_15_design.md
+.claude/plans/tmp/2026_0118_1031_30_tasks.md
 ```
 
 ### 実装フロー例
@@ -138,7 +138,7 @@
 ## 重要な注意点
 
 - **必須**: ファイル名には日本時間のタイムスタンプを使用してください
-- **必須**: 全てのファイルは`.claude/tasks/`配下に出力してください
+- **必須**: 全てのファイルは`.claude/plans/`配下に出力してください
 - **推奨**: 大規模な機能追加の場合は、requirements → design → tasks → plan の順で作成すると効果的です
 - **推奨**: 既存のファイルがある場合は、新しいタイムスタンプで別ファイルとして作成し、履歴を保持してください
 - ファイル出力後は、ユーザーにファイルパスを通知してください

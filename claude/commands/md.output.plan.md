@@ -19,7 +19,7 @@ description: 実行計画（plan.md）を出力する
    - ユーザーに以下を確認：
      - 実行計画のタイトル（タスクやプロジェクトの名称）
      - チケット番号またはタスク識別子（ブランチ名から推測可能な場合は自動取得）
-     - 出力先ディレクトリ（デフォルト: `.claude/tasks/<チケット番号>/`）
+     - 出力先ディレクトリ（デフォルト: `.claude/plans/<チケット番号>/`）
 
 2. **情報の収集と整理**
    - 現在の会話履歴から作業状況を分析
@@ -29,8 +29,8 @@ description: 実行計画（plan.md）を出力する
    - 既存のplan.md、requirements.md、design.md、tasks.mdがあれば参照
 
 3. **出力先ディレクトリの作成**
-   - `.claude/tasks/<チケット番号>/` ディレクトリを作成（存在しない場合）
-   - チケット番号が不明な場合は `.claude/tasks/tmp/` を使用
+   - `.claude/plans/<チケット番号>/` ディレクトリを作成（存在しない場合）
+   - チケット番号が不明な場合は `.claude/plans/tmp/` を使用
 
 4. **タイムスタンプの生成**
    - 日本時間でタイムスタンプを生成：
@@ -60,7 +60,7 @@ description: 実行計画（plan.md）を出力する
         - 関連ファイルのパス
 
    - ファイル名: `YYYY_MMDD_HHMM_SS_plan.md`
-   - 出力先: `.claude/tasks/<チケット番号>/` または `.claude/tasks/tmp/`
+   - 出力先: `.claude/plans/<チケット番号>/` または `.claude/plans/tmp/`
 
 6. **ファイル出力**
    - Writeツールでplan.mdを出力

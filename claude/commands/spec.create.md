@@ -21,10 +21,10 @@ description: 仕様書（requirements/design/tasks.md）を作成する
    - 推測できない場合は、ユーザーに確認
 
 2. **出力先ディレクトリの作成**
-   - チケット番号がある場合: `.claude/tasks/<チケット番号>/`
-   - チケット番号がない場合: `.claude/tasks/tmp/`
+   - チケット番号がある場合: `.claude/plans/<チケット番号>/`
+   - チケット番号がない場合: `.claude/plans/tmp/`
    ```bash
-   mkdir -p .claude/tasks/<識別子>/
+   mkdir -p .claude/plans/<識別子>/
    ```
 
 3. **タイムスタンプの生成**
@@ -58,7 +58,7 @@ description: 仕様書（requirements/design/tasks.md）を作成する
 ### 出力ファイル
 
 ```
-.claude/tasks/<識別子>/
+.claude/plans/<識別子>/
 ├── YYYY_MMDD_HHMM_SS_requirements.md  # 要件定義書
 ├── YYYY_MMDD_HHMM_SS_design.md        # 設計書
 └── YYYY_MMDD_HHMM_SS_tasks.md         # タスクリスト

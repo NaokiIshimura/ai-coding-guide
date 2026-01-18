@@ -146,7 +146,7 @@ color: green
 
 ```
 入力:
-  - tasks_file: .claude/tasks/ABC-123/2025_0102_0304_tasks.md
+  - tasks_file: .claude/plans/ABC-123/2025_0102_0304_tasks.md
   - start_task: TASK-001
 
 出力:

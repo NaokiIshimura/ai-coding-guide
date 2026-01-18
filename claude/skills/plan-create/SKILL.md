@@ -31,8 +31,8 @@ requirements-writer、design-writer、tasks-writerの3つのスキルを順番�
 
 ## 出力先
 
-- チケット番号がある場合: `.claude/tasks/<チケット番号>/`
-- チケット番号がない場合: `.claude/tasks/tmp/`
+- チケット番号がある場合: `.claude/plans/<チケット番号>/`
+- チケット番号がない場合: `.claude/plans/tmp/`
 
 ## 実行手順
 
@@ -40,7 +40,7 @@ requirements-writer、design-writer、tasks-writerの3つのスキルを順番�
 
 1. **出力先ディレクトリを確認・作成**
    ```bash
-   mkdir -p .claude/tasks/<識別子>/
+   mkdir -p .claude/plans/<識別子>/
    ```
 
 2. **タイムスタンプを生成（日本時間）**
@@ -98,7 +98,7 @@ requirements-writer、design-writer、tasks-writerの3つのスキルを順番�
 ## 出力ファイル
 
 ```
-.claude/tasks/<識別子>/
+.claude/plans/<識別子>/
 ├── YYYY_MMDD_HHMM_SS_requirements.md  # 仕様書
 ├── YYYY_MMDD_HHMM_SS_design.md        # 設計書
 └── YYYY_MMDD_HHMM_SS_tasks.md         # タスクリスト
@@ -139,9 +139,9 @@ tasks.md
 ```
 入力: チケット番号 ABC-123、JIRAから取得した情報
 出力:
-  .claude/tasks/ABC-123/2025_0102_0304_requirements.md
-  .claude/tasks/ABC-123/2025_0102_0304_design.md
-  .claude/tasks/ABC-123/2025_0102_0304_tasks.md
+  .claude/plans/ABC-123/2025_0102_0304_requirements.md
+  .claude/plans/ABC-123/2025_0102_0304_design.md
+  .claude/plans/ABC-123/2025_0102_0304_tasks.md
 ```
 
 ### 会話履歴からの実装計画作成
@@ -149,7 +149,7 @@ tasks.md
 ```
 入力: 会話で収集した要件情報
 出力:
-  .claude/tasks/tmp/2025_0102_0304_requirements.md
-  .claude/tasks/tmp/2025_0102_0304_design.md
-  .claude/tasks/tmp/2025_0102_0304_tasks.md
+  .claude/plans/tmp/2025_0102_0304_requirements.md
+  .claude/plans/tmp/2025_0102_0304_design.md
+  .claude/plans/tmp/2025_0102_0304_tasks.md
 ```

@@ -27,8 +27,8 @@ color: green
 
 ## 出力先
 
-- チケット番号がある場合: `.claude/tasks/<チケット番号>/`
-- チケット番号がない場合: `.claude/tasks/tmp/`
+- チケット番号がある場合: `.claude/plans/<チケット番号>/`
+- チケット番号がない場合: `.claude/plans/tmp/`
 
 ## 実行手順
 
@@ -36,7 +36,7 @@ color: green
 
 1. **出力先ディレクトリを確認・作成**
    ```bash
-   mkdir -p .claude/tasks/<識別子>/
+   mkdir -p .claude/plans/<識別子>/
    ```
 
 2. **タイムスタンプを生成（日本時間）**
@@ -90,7 +90,7 @@ color: green
 ## 出力ファイル
 
 ```
-.claude/tasks/<識別子>/
+.claude/plans/<識別子>/
 └── YYYY_MMDD_HHMM_SS_plan.md  # 実行計画
 ```
 
@@ -170,5 +170,5 @@ color: green
 
 ## ファイル出力場所
 
-- チケット番号が与えられている場合: `.claude/tasks/<チケット番号>/`
-- チケット番号が与えられていない場合: `.claude/tasks/tmp/`
+- チケット番号が与えられている場合: `.claude/plans/<チケット番号>/`
+- チケット番号が与えられていない場合: `.claude/plans/tmp/`

@@ -22,8 +22,8 @@ color: magenta
 作業状況や調査結果を構造化されたMarkdownファイルとして出力します。
 
 ### 出力先ルール
-- チケット番号あり: `.claude/tasks/<チケット番号>/`
-- チケット番号なし: `.claude/tasks/tmp/`
+- チケット番号あり: `.claude/plans/<チケット番号>/`
+- チケット番号なし: `.claude/plans/tmp/`
 
 ### ファイル名形式
 - パターン: `YYYY_MMDD_HHMM_SS_<トピック>.md`
@@ -72,7 +72,7 @@ created: YYYY/MM/DD HH:MM
 
 ### 読み込み対象
 - 引数指定あり: 指定されたパス
-- 引数指定なし: `.claude/tasks/`（デフォルト）
+- 引数指定なし: `.claude/plans/`（デフォルト）
 
 ### 実施手順
 
