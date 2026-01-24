@@ -22,11 +22,14 @@
 | `markdown` | markdownファイルを操作する（output, input） | markdownファイル |
 | `pull-request` | プルリクエストを操作する（create, update, comment resolve） | - |
 | `qiita` | Qiita投稿用の記事を作成 | YYYY_MMDD_HHMM_SS_qiita_<トピック>.md |
+| `codex` | Codex CLIを実行し、結果をマークダウンファイルに記録 | YYYY_MMDD_HHMM_SS_<operation>_result.md |
 
 ## ディレクトリ構成
 
 ```
 claude/skills/
+├── codex/
+│   └── SKILL.md                   # Codex実行スキル
 ├── git/
 │   └── SKILL.md                   # git操作スキル
 ├── markdown/
@@ -141,6 +144,34 @@ Qiita投稿用の記事を作成するスキル。以下のトリガーで自動
 **記法:** Qiita公式記法ガイド（https://qiita.com/Qiita/items/c686397e4a0f4f11683d）に準拠
 
 **スタイル:** 適度に絵文字を使用して読みやすく親しみやすい記事を作成
+
+### codex
+
+Codex CLIを使用してコード実装・レビュー・リファクタリング・デバッグを実行し、結果をマークダウンファイルに記録するスキル。
+
+**トリガー:**
+- Codexに実装を依頼する時
+- Codexにコードレビューを依頼する時
+- Codexにリファクタリングを依頼する時
+- Codexにデバッグを依頼する時
+
+**対応操作:** implement, review, refactor, debug
+
+**入力パラメータ:**
+- `operation`: 操作種別（implement, review, refactor, debug）
+- `prompt`: Codexに送信するプロンプト
+- `model`: 使用するモデル（オプション、デフォルト: auto）
+- `sandbox_mode`: サンドボックスモード（デフォルト: workspace-write）
+- `approval_policy`: 承認ポリシー（デフォルト: on-failure）
+
+**除外ファイルパターン:** `.env`, `*credentials*`, `*secret*`, `*password*`, `.claude/**`, `.vscode/**`, `.serena/**`
+
+**出力先:** `.claude/plans/codex/YYYY_MMDD_HHMM_SS_<operation>_result.md`
+
+**セキュリティ:**
+- 機密情報ファイルは自動的に除外されます
+- サンドボックスモードで安全に実行されます
+- 実行結果は`.gitignore`で除外されています
 
 ## 出力先
 

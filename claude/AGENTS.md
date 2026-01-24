@@ -52,6 +52,13 @@
 | `claude-comment-executor` | @claudeコメント実行スペシャリスト | @claudeコメント実装、自動タスク実行、コード改善適用 |
 | `claude-comment-cleaner` | @claudeコメントクリーンアップスペシャリスト | 完了コメント削除、コードクリーンアップ、不要コメント整理 |
 
+### Codex連携
+
+| エージェント | 説明 | 主な用途 |
+|-------------|------|----------|
+| `codex-implementer` | Codex実装エージェント | tasks.mdに基づく自律的な実装、各タスクを順次Codexに依頼 |
+| `codex-reviewer` | Codexレビューエージェント | 複数ファイルの一括レビュー、コード品質・セキュリティチェック |
+
 ## エージェントの使用方法
 
 エージェントは、メインタスクから以下のように呼び出します：
@@ -68,10 +75,10 @@ Task tool を使用して、適切な subagent_type を指定
 |------|-----|------------------|
 | 情報収集（Collector系） | `blue` | file-collector, code-collector, web-collector, confluence-collector, jira-collector, pr-collector, slack-collector |
 | ドキュメント作成（Writer系） | `magenta` | spec-writer, plan-writer |
-| レビュー・分析（Reviewer/Analyzer系） | `yellow` | code-reviewer, debugger, data-scientist |
+| レビュー・分析（Reviewer/Analyzer系） | `yellow` | code-reviewer, debugger, data-scientist, codex-reviewer |
 | 実装（Implementer系） | `red` | code-implementer |
 | Claude Comment管理 | `cyan` | claude-comment-finder, claude-comment-executor, claude-comment-cleaner |
-| 操作・統括（Operator/Orchestrator系） | `green` | git-operator, tasks-executor |
+| 操作・統括（Operator/Orchestrator系） | `cyan` | git-operator, tasks-executor, codex-implementer |
 
 ### 設定方法
 
