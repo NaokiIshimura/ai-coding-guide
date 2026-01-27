@@ -1,6 +1,5 @@
 {
   "language": "japanese",
-  "model": "opus",
   "permissions": {
     "allow": [
       "Edit",
