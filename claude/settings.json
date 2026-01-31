@@ -3,7 +3,6 @@
   "permissions": {
     "allow": [
       "Edit",
-      "Fetch",
       "Write",
       "MultiEdit",
       "Bash(claude agents)",
@@ -16,7 +15,8 @@
       "Bash(colima:*)",
       "mcp__*",
       "Bash(code:*)",
-      "Bash(date:*)"
+      "Bash(date:*)",
+      "WebFetch(domain:*)"
     ],
     "deny": [
       "Read(/coverage/)"
