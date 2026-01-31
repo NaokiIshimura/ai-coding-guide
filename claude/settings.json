@@ -3,6 +3,7 @@
   "permissions": {
     "allow": [
       "Edit",
+      "Fetch",
       "Write",
       "MultiEdit",
       "Bash(claude agents)",
