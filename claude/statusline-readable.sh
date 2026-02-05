@@ -53,74 +53,8 @@ generate_progress_bar() {
     echo "$bar"
 }
 
-# Calculate directory display with improved hierarchy and readability
-dir_display=""
-
-# Replace home directory with ~ for shorter display
-display_dir="$current_dir"
-if [[ "$current_dir" == "$HOME"* ]]; then
-    display_dir="~${current_dir#$HOME}"
-fi
-
-# Handle project-relative paths with smart truncation
-if [ "$current_dir" = "$project_dir" ]; then
-    # We're at the project root
-    if [[ "$project_dir" == "$HOME"* ]]; then
-        dir_display="~${project_dir#$HOME}"
-    else
-        dir_display=$(basename "$project_dir")
-    fi
-else
-    # We're in a subdirectory of the project
-    rel_path=$(realpath --relative-to="$project_dir" "$current_dir" 2>/dev/null || echo "")
-    
-    if [ -n "$rel_path" ] && [ "$rel_path" != "." ]; then
-        # Count directory levels in relative path
-        level_count=$(echo "$rel_path" | tr '/' '\n' | wc -l | tr -d ' ')
-        
-        if [ "$level_count" -gt 2 ]; then
-            # For deep paths, show .../<parent>/<current>
-            parent_dir=$(dirname "$rel_path")
-            parent_name=$(basename "$parent_dir")
-            current_name=$(basename "$rel_path")
-            dir_display=".../$parent_name/$current_name"
-        else
-            # For shallow paths, show full relative path from project
-            project_name=$(basename "$project_dir")
-            dir_display="$project_name/$rel_path"
-        fi
-    else
-        # Fallback: show home-relative or absolute path with smart truncation
-        if [[ "$display_dir" == "~/"* ]]; then
-            # Count levels from home
-            home_rel_path="${display_dir#~/}"
-            if [ -n "$home_rel_path" ]; then
-                level_count=$(echo "$home_rel_path" | tr '/' '\n' | wc -l | tr -d ' ')
-                if [ "$level_count" -gt 2 ]; then
-                    parent_dir=$(dirname "$home_rel_path")
-                    parent_name=$(basename "$parent_dir")
-                    current_name=$(basename "$home_rel_path")
-                    dir_display="~/.../$parent_name/$current_name"
-                else
-                    dir_display="$display_dir"
-                fi
-            else
-                dir_display="~"
-            fi
-        else
-            # For non-home paths, show with smart truncation
-            level_count=$(echo "$current_dir" | tr '/' '\n' | wc -l | tr -d ' ')
-            if [ "$level_count" -gt 3 ]; then
-                parent_dir=$(dirname "$current_dir")
-                parent_name=$(basename "$parent_dir")
-                current_name=$(basename "$current_dir")
-                dir_display=".../$parent_name/$current_name"
-            else
-                dir_display="$display_dir"
-            fi
-        fi
-    fi
-fi
+# Calculate directory display - show only current directory name
+dir_display=$(basename "$current_dir")
 
 # Git information with workflow status, worktree info, and cleaner formatting
 git_info=""
@@ -270,19 +204,7 @@ if [ "$usage_percent" -ge 0 ] 2>/dev/null; then
 fi
 
 # Construct readable status line with enhanced visibility and hierarchy
-# Enhance directory display by highlighting the current directory name with brighter colors
-if [[ "$dir_display" == *"/" ]]; then
-    # Split path to highlight current directory
-    path_prefix=$(dirname "$dir_display")
-    current_name=$(basename "$dir_display")
-    if [ "$path_prefix" = "." ]; then
-        printf "%b%b%s%b %bin%b %b%b%s%b" "$BOLD" "$LIGHT_BLUE" "$username" "$RESET" "$DIM" "$RESET" "$BOLD" "$CYAN" "$current_name" "$RESET"
-    else
-        printf "%b%b%s%b %bin%b %b%s%b/%b%b%s%b" "$BOLD" "$LIGHT_BLUE" "$username" "$RESET" "$DIM" "$RESET" "$CYAN" "$path_prefix" "$RESET" "$BOLD" "$CYAN" "$current_name" "$RESET"
-    fi
-else
-    printf "%b%b%s%b %bin%b %b%b%s%b" "$BOLD" "$LIGHT_BLUE" "$username" "$RESET" "$DIM" "$RESET" "$BOLD" "$CYAN" "$dir_display" "$RESET"
-fi
+printf "%b%b%s%b %bin%b %b%b%s%b" "$BOLD" "$LIGHT_BLUE" "$username" "$RESET" "$DIM" "$RESET" "$BOLD" "$CYAN" "$dir_display" "$RESET"
 
 if [ -n "$git_info" ]; then
     printf " %bon%b %b%b%s%b" "$DIM" "$RESET" "$BOLD" "$GREEN" "$git_info" "$RESET"
