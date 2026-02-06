@@ -48,5 +48,8 @@
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-readable.sh"
+  },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   }
 }
