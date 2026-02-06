@@ -7,7 +7,7 @@ input=$(cat)
 current_dir=$(echo "$input" | jq -r '.workspace.current_dir')
 model_name=$(echo "$input" | jq -r '.model.display_name')
 project_dir=$(echo "$input" | jq -r '.workspace.project_dir')
-username=$(whoami)
+# username removed
 
 # Token usage information
 # Try to use pre-calculated percentage from Claude Code
@@ -36,7 +36,6 @@ GREEN='\033[92m'  # Bright green
 YELLOW='\033[93m'  # Bright yellow
 CYAN='\033[96m'  # Bright cyan
 PURPLE='\033[95m'  # Bright purple
-LIGHT_BLUE='\033[94m'  # Additional bright blue for directories
 
 # Generate progress bar
 # Args: $1=percentage (0-100), $2=width (default 10)
@@ -204,7 +203,7 @@ if [ "$usage_percent" -ge 0 ] 2>/dev/null; then
 fi
 
 # Construct readable status line with enhanced visibility and hierarchy
-printf "%b%b%s%b %bin%b %b%b%s%b" "$BOLD" "$LIGHT_BLUE" "$username" "$RESET" "$DIM" "$RESET" "$BOLD" "$CYAN" "$dir_display" "$RESET"
+printf "%b%b%s%b" "$BOLD" "$CYAN" "$dir_display" "$RESET"
 
 if [ -n "$git_info" ]; then
     printf " %bon%b %b%b%s%b" "$DIM" "$RESET" "$BOLD" "$GREEN" "$git_info" "$RESET"
@@ -212,7 +211,7 @@ fi
 
 printf " %busing%b %b%b%s%b" "$DIM" "$RESET" "$BOLD" "$PURPLE" "$model_short" "$RESET"
 
-# Add context usage progress bar at the end
+# Add context usage percentage at the end
 if [ -n "$context_info" ]; then
     # Color based on usage level
     if [ "$usage_percent" -ge 90 ]; then
@@ -222,7 +221,5 @@ if [ -n "$context_info" ]; then
     else
         BAR_COLOR='\033[92m'  # Green for low usage
     fi
-    printf " %b[%b%s%b]%b %b%d%%%b" \
-        "$DIM" "$BAR_COLOR" "$progress_bar" "$DIM" "$RESET" \
-        "$BAR_COLOR" "$usage_percent" "$RESET"
+    printf " %b[%d%%]%b" "$BAR_COLOR" "$usage_percent" "$RESET"
 fi
