@@ -23,6 +23,7 @@
 | `/pr.create` | プルリクエストを作成 | GitHub MCP使用、PRテンプレート適用、Assignee設定 |
 | `/pr.comment.resolve` | PRコメントを確認して修正実施 | コメント取得、指摘分析、修正実施、コミット作成 |
 | `/pr.update` | PRのdescriptionを更新 | 既存PR更新、テンプレート適用 |
+| `/pr.ci.wait` | PRのCI完了を待機して通知 | CI checks監視、完了待機、macOS通知 |
 | `/pr.comment.check` | PRコメント確認（非推奨） | 旧バージョン - 使用非推奨 |
 
 ### JIRA連携
