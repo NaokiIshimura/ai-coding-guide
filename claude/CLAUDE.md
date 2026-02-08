@@ -9,6 +9,9 @@
 ## mcp
 @~/ai-coding-guide/guides/mcp.md
 
+## frontend
+@~/ai-coding-guide/guides/frontend.md
+
 ## react
 @~/ai-coding-guide/guides/react.md
 
