@@ -160,21 +160,26 @@ if [ -d "$current_dir/.git" ] || git -C "$current_dir" rev-parse --git-dir >/dev
         workflow_info=" ${ORANGE}$workflow_type $bisect_status${RESET}"
     fi
     
-    # Git status with clear indicators
+    # Git status with symbol indicators (!:modified +:staged ?:untracked)
     git_status=""
+    git_symbols=""
     if git -C "$current_dir" --no-optional-locks diff --quiet --exit-code 2>/dev/null; then
         if ! git -C "$current_dir" --no-optional-locks diff --cached --quiet --exit-code 2>/dev/null; then
-            git_status=" staged"
+            git_symbols="+"
         fi
     else
-        git_status=" modified"
+        git_symbols="!"
         if ! git -C "$current_dir" --no-optional-locks diff --cached --quiet --exit-code 2>/dev/null; then
-            git_status=" modified+staged"
+            git_symbols="!+"
         fi
     fi
-    
+
     if [ -n "$(git -C "$current_dir" --no-optional-locks ls-files --others --exclude-standard 2>/dev/null)" ]; then
-        git_status="${git_status} untracked"
+        git_symbols="${git_symbols}?"
+    fi
+
+    if [ -n "$git_symbols" ]; then
+        git_status=" [${git_symbols}]"
     fi
     
     git_info="$branch$worktree_info$workflow_info$git_status"
