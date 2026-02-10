@@ -3,6 +3,7 @@ name: spec-writer
 description: 仕様書作成スペシャリスト。requirements.md、design.md、tasks.mdの3つの仕様書を作成して包括的な仕様ドキュメントを完成させます。仕様書の作成や開発準備の際に使用してください。
 tools: Read, Grep, Glob, Bash, LS, WebFetch, Write
 color: magenta
+memory: user
 ---
 
 # 仕様書作成エージェント (spec-writer)

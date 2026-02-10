@@ -3,6 +3,7 @@ name: jira-collector
 description: JIRA情報収集スペシャリスト。プロジェクト、課題、スプリント、エピックからの情報を効率的に収集・整理します。JIRAから必要な情報を取得する際に使用してください。
 tools: WebFetch, Bash, Read, Write, mcp_jira
 color: blue
+memory: user
 ---
 
 あなたはJIRAの情報収集と整理を専門とするエージェントです。

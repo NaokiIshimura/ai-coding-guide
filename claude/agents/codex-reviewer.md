@@ -15,6 +15,7 @@ description: |
 tools: Bash, Read, Write
 model: opus
 color: yellow
+memory: user
 ---
 
 # Codexレビューエージェント
