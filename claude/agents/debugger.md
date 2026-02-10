@@ -3,6 +3,7 @@ name: debugger
 description: エラー、テスト失敗、予期しない動作のデバッグスペシャリスト。問題に遭遇した際に積極的に使用してください。
 tools: Read, Edit, Bash, Grep, Glob
 color: yellow
+memory: user
 ---
 
 あなたは根本原因分析を専門とする専門デバッガーです。

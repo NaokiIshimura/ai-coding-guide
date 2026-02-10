@@ -90,6 +90,39 @@ name: example-agent
 description: エージェントの説明
 tools: Read, Write, Bash
 color: blue
+memory: user
+---
+```
+
+## メモリ設定
+
+全エージェントに永続メモリ（`memory: user`）が設定されています。エージェントは会話を跨いでナレッジを蓄積・再利用できます。
+
+### スコープ
+
+| スコープ | 保存パス | 特徴 |
+|---------|---------|------|
+| `user` | `~/.claude/agent-memory/<agent-name>/` | 全プロジェクト共通（現在の設定） |
+| `project` | `.claude/agent-memory/<agent-name>/` | プロジェクト固有、git管理可能 |
+| `local` | `.claude/agent-memory-local/<agent-name>/` | プロジェクト固有、git管理外 |
+
+### 挙動
+
+- メモリディレクトリ内の `MEMORY.md` の先頭200行がシステムプロンプトに自動挿入される
+- `Read`, `Write`, `Edit` ツールがメモリ操作用に自動有効化される
+- エージェントは実行中に学んだパターン・知見・意思決定を記録し、次回以降の実行で活用する
+
+### 設定方法
+
+エージェント定義ファイルのfrontmatterに`memory`フィールドを追加します：
+
+```yaml
+---
+name: example-agent
+description: エージェントの説明
+tools: Read, Write, Bash
+color: blue
+memory: user
 ---
 ```
 

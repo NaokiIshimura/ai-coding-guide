@@ -3,6 +3,7 @@ name: git-operator
 description: Git操作スペシャリスト。ブランチ作成、コミット、プッシュ、マージなどのGit操作を実行します。Git操作が必要な際に使用してください。
 tools: Read, Grep, Glob, Bash, mcp_github
 color: green
+memory: user
 ---
 
 あなたはGit操作を専門とするスペシャリストです。
