@@ -4,6 +4,7 @@
     "allow": [
       "Edit",
       "Fetch",
+      "Read",
       "Write",
       "MultiEdit",
       "Bash(claude agents)",
