@@ -18,7 +18,8 @@
       "mcp__*",
       "Bash(code:*)",
       "Bash(date:*)",
-      "WebFetch(domain:*)"
+      "WebFetch(domain:*)",
+      "Bash(ls:*)"
     ],
     "deny": [
       "Read(/coverage/)"
