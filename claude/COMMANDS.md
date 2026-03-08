@@ -74,6 +74,12 @@
 | `/plan.implement` | 実装計画に基づいて実装を開始 | 実装計画読み込み、tasks-executorエージェント呼び出し、進捗管理 |
 | `/tasks.execute` | tasks.mdに基づいてタスクを実行 | タスク読み込み、依存関係確認、順次実装、進捗更新 |
 
+### Storybook
+
+| コマンド | 説明 | 主な機能 |
+|---------|------|----------|
+| `/storybook.docgen.disable` | StorybookのdocgenをFalseに設定 | docgen無効化、設定ファイル更新、元に戻す方法の案内 |
+
 ### ユーティリティ
 
 | コマンド | 説明 | 主な機能 |
