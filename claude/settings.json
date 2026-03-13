@@ -20,7 +20,8 @@
       "Bash(date:*)",
       "WebFetch(domain:*)",
       "Bash(ls:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(find:*)"
     ],
     "deny": [
       "Read(/coverage/)"
