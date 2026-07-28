@@ -30,6 +30,10 @@ gitの利用について以下のルールを厳守してください。
 - **重要**: descriptionはtemplateを参考にして  
   - templateの配置バスの例
    - .github/pull_request_template.md
+- **重要**: descriptionにはサマリと詳細を記載して
+  - サマリ: 変更内容の概要を簡潔に記載して
+  - 詳細: 変更内容の詳細を記載して
+- descriptionには適度に表（テーブル）を利用して
 - descriptionは日本語で記述して
 - Assigneesに`NaokiIshimura`を設定して
 - copilot reviewを有効にして
