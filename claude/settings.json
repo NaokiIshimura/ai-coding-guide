@@ -16,9 +16,7 @@
       "Fetch",
       "MultiEdit",
       "Read",
-      "WebFetch(domain:*)",
-      "Write",
-      "mcp__*"
+      "Write"
     ],
     "deny": [
       "Read(/coverage/)"
