@@ -36,5 +36,3 @@ gitの利用について以下のルールを厳守してください。
 - descriptionには適度に表（テーブル）を利用して
 - descriptionは日本語で記述して
 - Assigneesに`NaokiIshimura`を設定して
-- copilot reviewを有効にして
-- copilot reviewのコメントを確認して、指摘事項があったら修正して
