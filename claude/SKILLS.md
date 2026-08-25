@@ -23,7 +23,7 @@
 | `pull-request` | プルリクエストを操作する（create, update, comment resolve） | - |
 | `qiita` | Qiita投稿用の記事を作成 | YYYY_MMDD_HHMM_SS_qiita_<トピック>.md |
 | `codex` | Codex CLIを実行し、結果をマークダウンファイルに記録 | YYYY_MMDD_HHMM_SS_<operation>_result.md |
-| `qiita-release-notes` | Claude Codeのバージョンを指定してQiitaのリリースノート記事を作成 | YYYY_MMDD_HHMM_SS_release_notes.md |
+| `qiita-claude-code-release-notes` | Claude Codeのバージョンを指定してQiitaのリリースノート記事を作成 | YYYY_MMDD_HHMM_SS_release_notes.md |
 | `tmux-pane-info` | 現在のtmuxセッション・ウィンドウ・ペイン、および同一ウィンドウ内の別ペインの情報を取得 | - |
 
 ## ディレクトリ構成
@@ -46,7 +46,7 @@ claude/skills/
 │   └── SKILL.md                   # 仕様書統合作成スキル
 ├── tasks-execute/
 │   └── SKILL.md                   # タスク実行スキル
-├── qiita-release-notes/
+├── qiita-claude-code-release-notes/
 │   └── SKILL.md                   # Claude Codeリリースノート記事作成スキル
 └── tmux-pane-info/
     └── SKILL.md                   # tmuxペイン情報取得スキル
@@ -151,7 +151,7 @@ Qiita投稿用の記事を作成するスキル。以下のトリガーで自動
 
 **スタイル:** 適度に絵文字を使用して読みやすく親しみやすい記事を作成
 
-### qiita-release-notes
+### qiita-claude-code-release-notes
 
 Claude Code のバージョン範囲を指定して、Qiita 投稿用のリリースノート記事を作成するスキル。
 

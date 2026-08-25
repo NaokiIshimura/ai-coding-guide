@@ -1,5 +1,5 @@
 ---
-name: qiita-release-notes
+name: qiita-claude-code-release-notes
 description: Claude Codeのバージョンを指定してQiitaのリリースノート記事を作成する
 allowed-tools: Write, Read, Bash, Glob, Grep, WebFetch, WebSearch
 ---
