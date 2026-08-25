@@ -23,6 +23,8 @@
 | `pull-request` | プルリクエストを操作する（create, update, comment resolve） | - |
 | `qiita` | Qiita投稿用の記事を作成 | YYYY_MMDD_HHMM_SS_qiita_<トピック>.md |
 | `codex` | Codex CLIを実行し、結果をマークダウンファイルに記録 | YYYY_MMDD_HHMM_SS_<operation>_result.md |
+| `qiita-release-notes` | Claude Codeのバージョンを指定してQiitaのリリースノート記事を作成 | YYYY_MMDD_HHMM_SS_release_notes.md |
+| `tmux-pane-info` | 現在のtmuxセッション・ウィンドウ・ペイン、および同一ウィンドウ内の別ペインの情報を取得 | - |
 
 ## ディレクトリ構成
 
@@ -42,8 +44,12 @@ claude/skills/
 │   └── SKILL.md                   # Qiita記事作成スキル
 ├── spec-writer/
 │   └── SKILL.md                   # 仕様書統合作成スキル
-└── tasks-execute/
-    └── SKILL.md                   # タスク実行スキル
+├── tasks-execute/
+│   └── SKILL.md                   # タスク実行スキル
+├── qiita-release-notes/
+│   └── SKILL.md                   # Claude Codeリリースノート記事作成スキル
+└── tmux-pane-info/
+    └── SKILL.md                   # tmuxペイン情報取得スキル
 ```
 
 ## スキルの使用方法
@@ -145,6 +151,33 @@ Qiita投稿用の記事を作成するスキル。以下のトリガーで自動
 
 **スタイル:** 適度に絵文字を使用して読みやすく親しみやすい記事を作成
 
+### qiita-release-notes
+
+Claude Code のバージョン範囲を指定して、Qiita 投稿用のリリースノート記事を作成するスキル。
+
+**トリガー:**
+- Claude Code のリリースノート記事を作成する時
+- 「v2.1.80 - v2.1.84 のリリースノートを書いて」と言われた時
+- バージョン範囲を指定して記事作成を依頼された時
+
+**入力パラメータ:**
+- 開始バージョン（例: `v2.1.80`）
+- 終了バージョン（例: `v2.1.84`）
+
+**処理フロー:**
+1. `gh` コマンドで GitHub から CHANGELOG.md を取得
+2. 指定バージョン範囲のエントリを抽出
+3. 新機能（Added/Improved）と修正（Fixed）に分類
+4. カテゴリ別（CLI, MCP, Hooks, プラグイン, VSCode 等）に整理
+5. Qiita フォーマットで記事を生成・出力
+
+**記事スタイル:**
+- 見出し形式: `**<機能名>（v<バージョン>）**`（バージョンは末尾に括弧書き）
+- 絵文字付きカテゴリ見出し
+- 末尾にバージョン別サマリーテーブル
+
+**出力先:** `.claude/plans/qiita/<タイムスタンプ>_release_notes.md`
+
 ### codex
 
 Codex CLIを使用してコード実装・レビュー・リファクタリング・デバッグを実行し、結果をマークダウンファイルに記録するスキル。
@@ -172,6 +205,21 @@ Codex CLIを使用してコード実装・レビュー・リファクタリン�
 - 機密情報ファイルは自動的に除外されます
 - サンドボックスモードで安全に実行されます
 - 実行結果は`.gitignore`で除外されています
+
+### tmux-pane-info
+
+現在Claude Codeが起動されているtmuxの「セッション・ウィンドウ・ペイン」の情報、および同一セッション・ウィンドウ内で起動されている別ペインの情報を取得するスキル。以下のトリガーで自動的に呼び出されます：
+
+- 現在のtmuxセッション・ウィンドウ・ペインの情報を知りたい時
+- 同じウィンドウ内の別ペインの情報を取得したい時
+- 「tmuxの情報を教えて」「隣のペインで何が動いてる？」と言われた時
+
+**対応操作:**
+- 現在のセッション・ウィンドウ・ペイン情報取得（`tmux display-message`）
+- 同一ウィンドウ内の別ペイン一覧取得（`tmux list-panes`）
+- 別ペインの表示内容取得（`tmux capture-pane`）
+
+**前提条件:** tmuxセッション内でClaude Codeが起動されている場合のみ有効（`$TMUX` 環境変数で判定）
 
 ## 出力先
 
