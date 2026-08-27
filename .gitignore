@@ -1,0 +1,5 @@
+# Claude Code のローカル作業ディレクトリ（プラン・生成物）
+.claude/
+
+# Serena のローカルデータ
+.serena/
