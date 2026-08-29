@@ -1,7 +1,7 @@
 # ai-coding-guide Makefile
 # Claude agents and commands deployment
 
-.PHONY: help install install-config install-settings install-statusline install-agents install-commands install-skills import-settings clean clean-config clean-settings clean-agents clean-commands clean-skills
+.PHONY: help install install-config install-settings install-statusline install-agents install-commands install-skills install-tmux-conf import-settings clean clean-config clean-settings clean-agents clean-commands clean-skills clean-tmux-conf
 
 # Default target
 help:
@@ -13,6 +13,7 @@ help:
 	@echo "  make install-agents   - Install agents to ~/.claude/agents/"
 	@echo "  make install-commands - Install commands to ~/.claude/commands/"
 	@echo "  make install-skills   - Install skills to ~/.claude/skills/"
+	@echo "  make install-tmux-conf - Install tmux.conf to ~/.tmux.conf"
 	@echo "  make import-settings  - Copy settings from ~/.claude/ to claude/ directory"
 	@echo "  make clean            - Remove installed files"
 	@echo "  make clean-config     - Remove installed CLAUDE.md"
@@ -20,9 +21,10 @@ help:
 	@echo "  make clean-agents     - Remove installed agents"
 	@echo "  make clean-commands   - Remove installed commands"
 	@echo "  make clean-skills     - Remove installed skills"
+	@echo "  make clean-tmux-conf  - Remove installed tmux.conf"
 
 # Install all
-install: install-config install-settings install-statusline install-agents install-commands install-skills
+install: install-config install-settings install-statusline install-agents install-commands install-skills install-tmux-conf
 	@echo "✓ Installation complete"
 
 # Install CLAUDE.md
@@ -79,8 +81,14 @@ install-skills:
 	done
 	@echo "✓ Skills installed"
 
+# Install tmux.conf
+install-tmux-conf:
+	@echo "Installing tmux.conf to ~/.tmux.conf"
+	@cp -v config/tmux.conf ~/.tmux.conf
+	@echo "✓ tmux.conf installed"
+
 # Clean all
-clean: clean-config clean-settings clean-agents clean-commands clean-skills
+clean: clean-config clean-settings clean-agents clean-commands clean-skills clean-tmux-conf
 	@echo "✓ Cleanup complete"
 
 # Clean CLAUDE.md
@@ -113,3 +121,9 @@ clean-skills:
 	@echo "Removing skills from ~/.claude/skills/"
 	@rm -rfv ~/.claude/skills/*
 	@echo "✓ Skills removed"
+
+# Clean tmux.conf
+clean-tmux-conf:
+	@echo "Removing tmux.conf from ~/.tmux.conf"
+	@rm -fv ~/.tmux.conf
+	@echo "✓ tmux.conf removed"
