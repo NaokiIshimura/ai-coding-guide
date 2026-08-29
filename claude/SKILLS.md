@@ -21,9 +21,7 @@
 | `git` | gitを操作する（branch, commit, push, pull） | - |
 | `markdown` | markdownファイルを操作する（output, input） | markdownファイル |
 | `pull-request` | プルリクエストを操作する（create, update, comment resolve） | - |
-| `qiita` | Qiita投稿用の記事を作成 | YYYY_MMDD_HHMM_SS_qiita_<トピック>.md |
 | `codex` | Codex CLIを実行し、結果をマークダウンファイルに記録 | YYYY_MMDD_HHMM_SS_<operation>_result.md |
-| `qiita-claude-code-release-notes` | Claude Codeのバージョンを指定してQiitaのリリースノート記事を作成 | YYYY_MMDD_HHMM_SS_release_notes.md |
 | `tmux-pane-info` | 現在のtmuxセッション・ウィンドウ・ペイン、および同一ウィンドウ内の別ペインの情報を取得 | - |
 
 ## ディレクトリ構成
@@ -40,14 +38,10 @@ claude/skills/
 │   └── SKILL.md                   # 実行計画作成スキル
 ├── pull-request/
 │   └── SKILL.md                   # プルリクエスト操作スキル
-├── qiita/
-│   └── SKILL.md                   # Qiita記事作成スキル
 ├── spec-writer/
 │   └── SKILL.md                   # 仕様書統合作成スキル
 ├── tasks-execute/
 │   └── SKILL.md                   # タスク実行スキル
-├── qiita-claude-code-release-notes/
-│   └── SKILL.md                   # Claude Codeリリースノート記事作成スキル
 └── tmux-pane-info/
     └── SKILL.md                   # tmuxペイン情報取得スキル
 ```
@@ -136,47 +130,6 @@ GitHubプルリクエストの操作を行うスキル。以下のトリガー�
 - 「PRを作って」「PRを更新して」「コメントに対応して」と言われた時
 
 **対応操作:** create, update, comment resolve
-
-### qiita
-
-Qiita投稿用の記事を作成するスキル。以下のトリガーで自動的に呼び出されます：
-
-- Qiita記事を作成する時
-- 技術記事を執筆する時
-- 「Qiita記事を書いて」「記事を作成して」と言われた時
-
-**記事構成:** はじめに（サンプルコード含む）、3行まとめ、メインコンテンツ、まとめ、参考リンク
-
-**記法:** Qiita公式記法ガイド（https://qiita.com/Qiita/items/c686397e4a0f4f11683d）に準拠
-
-**スタイル:** 適度に絵文字を使用して読みやすく親しみやすい記事を作成
-
-### qiita-claude-code-release-notes
-
-Claude Code のバージョン範囲を指定して、Qiita 投稿用のリリースノート記事を作成するスキル。
-
-**トリガー:**
-- Claude Code のリリースノート記事を作成する時
-- 「v2.1.80 - v2.1.84 のリリースノートを書いて」と言われた時
-- バージョン範囲を指定して記事作成を依頼された時
-
-**入力パラメータ:**
-- 開始バージョン（例: `v2.1.80`）
-- 終了バージョン（例: `v2.1.84`）
-
-**処理フロー:**
-1. `gh` コマンドで GitHub から CHANGELOG.md を取得
-2. 指定バージョン範囲のエントリを抽出
-3. 新機能（Added/Improved）と修正（Fixed）に分類
-4. カテゴリ別（CLI, MCP, Hooks, プラグイン, VSCode 等）に整理
-5. Qiita フォーマットで記事を生成・出力
-
-**記事スタイル:**
-- 見出し形式: `**<機能名>（v<バージョン>）**`（バージョンは末尾に括弧書き）
-- 絵文字付きカテゴリ見出し
-- 末尾にバージョン別サマリーテーブル
-
-**出力先:** `.claude/plans/qiita/<タイムスタンプ>_release_notes.md`
 
 ### codex
 
