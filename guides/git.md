@@ -36,3 +36,6 @@ gitの利用について以下のルールを厳守してください。
 - descriptionには適度に表（テーブル）を利用して
 - descriptionは日本語で記述して
 - Assigneesに`NaokiIshimura`を設定して
+
+#### comment
+- **重要**: PRのコメントに返信する際には、Claude Codeによる返信であることを明記してください
