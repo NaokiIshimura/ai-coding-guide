@@ -20,7 +20,7 @@
         "matcher": "idle_prompt",
         "hooks": [
           {
-            "command": "command -v afplay > /dev/null 2>&1 && afplay ~/ai-coding-guide/sounds/Glass.aiff || true",
+            "command": "command -v afplay > /dev/null 2>&1 && afplay $HOME/ai-coding-guide/sounds/Glass.aiff || true",
             "type": "command"
           }
         ]
@@ -96,7 +96,7 @@
       {
         "hooks": [
           {
-            "command": "command -v afplay > /dev/null 2>&1 && afplay ~/ai-coding-guide/sounds/Funk.aiff || true",
+            "command": "command -v afplay > /dev/null 2>&1 && afplay $HOME/ai-coding-guide/sounds/Funk.aiff || true",
             "type": "command"
           }
         ]
@@ -166,7 +166,7 @@
     ]
   },
   "statusLine": {
-    "command": "bash ~/.claude/statusline-readable.sh",
+    "command": "bash $HOME/.claude/statusline-readable.sh",
     "type": "command"
   }
 }
