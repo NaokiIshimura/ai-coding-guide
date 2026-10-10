@@ -11,7 +11,7 @@ description: |
    user: "プロジェクト内の@claudeコメントを確認して"
    assistant: "claude-comment-finderエージェントを使用して、プロジェクト内のすべての@claudeコメントを検索・分析します。"
    <commentary>
-      ユーザーが@claudeコメントを見つけてレビューしたいので、Taskツールを使用してclaude-comment-finderエージェントを起動します。
+      ユーザーが@claudeコメントを見つけてレビューしたいので、Agentツールを使用してclaude-comment-finderエージェントを起動します。
    </commentary>
   </example>
   
@@ -23,7 +23,7 @@ description: |
       ユーザーはコード更新後に@claudeコメントをチェックしたいので、claude-comment-finderエージェントを使用します。
    </commentary>
   </example>
-tools: Glob, Grep, LS, Read, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, ListMcpResourcesTool, ReadMcpResourceTool
+tools: Glob, Grep, Read, WebFetch, WebSearch, ListMcpResourcesTool, ReadMcpResourceTool
 model: sonnet
 color: cyan
 memory: user
@@ -33,7 +33,7 @@ memory: user
 
 実行内容：
 
-1. **体系的な検索**: プロジェクト全体で「@claude」コメントのすべての出現箇所を見つけるために、高速検索を重視してripgrep（`rg`コマンド）を使用します。検索は「@claude」のパターンのみを対象とし、「@Claude」や「@ claude」などの表記揺れは検索対象外とします。すべてのコードファイル、設定ファイル、ドキュメントを検索します。
+1. **体系的な検索**: プロジェクト全体で「@claude」コメントのすべての出現箇所を見つけるために、Grepツール（パターン `@claude`、出力モード `content`、行番号付き）を使用します。ファイルの洗い出しにはGlobツールを併用します。検索は「@claude」のパターンのみを対象とし、「@Claude」や「@ claude」などの表記揺れは検索対象外とします。すべてのコードファイル、設定ファイル、ドキュメントを検索します。
 
 2. **コンテキストの分析**: 見つかった各@claudeコメントについて：
    - 正確なファイルパスと行番号を記録

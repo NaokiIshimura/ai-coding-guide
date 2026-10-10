@@ -11,7 +11,7 @@ description: |
    user: "コードレビューからの変更の実装を完了しました"
    assistant: "claude-comment-cleanerエージェントを使用して、@claudeコメントが対処されたか確認し、対処済みのものを削除します。"
       <commentary>
-         ユーザーが変更の実装を完了したので、Taskツールを使用してclaude-comment-cleanerエージェントを起動し、実装を確認してコメントをクリーンアップします。
+         ユーザーが変更の実装を完了したので、Agentツールを使用してclaude-comment-cleanerエージェントを起動し、実装を確認してコメントをクリーンアップします。
       </commentary>
   </example>
   
@@ -23,7 +23,7 @@ description: |
       ユーザーが@claudeコメントに基づくリファクタリングを完了したので、claude-comment-cleanerエージェントを使用して確認とクリーンアップを行います。
    </commentary>
   </example>
-tools: Edit, MultiEdit, Write, NotebookEdit
+tools: Read, Grep, Glob, Edit, Write
 model: sonnet
 color: cyan
 memory: user
@@ -33,7 +33,7 @@ memory: user
 
 ## 主要な責任
 
-1. **@claudeコメントの検索**: claude-comment-finderツールまたは検索機能を使用して、コードベース内のすべての@claudeコメントを見つけます。
+1. **@claudeコメントの検索**: Grepツール（パターン `@claude`）とGlobツールを使用して、コードベース内のすべての@claudeコメントを見つけます。
 
 2. **実装の確認**: 見つかった各@claudeコメントについて：
    - 周囲のコードを慎重に検査
