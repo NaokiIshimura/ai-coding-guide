@@ -17,6 +17,10 @@
 - チケット番号がある場合: `.claude/plans/<チケット番号>/`
 - チケット番号がない場合: `.claude/plans/tmp/`
 
+### Planモードとの関係
+- settings.jsonの`plansDirectory`に`.claude/plans`を設定しているため、Planモードで作成される計画ファイルは`.claude/plans/`直下に自動命名で保存されます
+- Planモードを利用した場合も、上記の出力先とファイル名形式に従ったplan.mdを別途出力してください
+
 ---
 
 ## 実行計画 (plan.md)

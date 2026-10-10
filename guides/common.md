@@ -47,6 +47,7 @@
 
 ### 例
 #### claude code
+- Claude Codeは`tasks`ではなく`plans`ディレクトリを使用してください（settings.jsonの`plansDirectory`と合わせるため）
 ```
 .claude/plans/<チケット番号>/xxx.md
 .claude/plans/tmp/xxx.md
