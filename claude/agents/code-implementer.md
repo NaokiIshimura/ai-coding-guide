@@ -9,27 +9,27 @@ description: |
   <example>
    Context: ユーザーが新しい関数の実装を必要としている場合
    user: "メールアドレスを検証する関数を書いてください"
-   assistant: "code-implementationエージェントを使用して、その検証関数を作成します。"
+   assistant: "code-implementerエージェントを使用して、その検証関数を作成します。"
    <commentary>
-      ユーザーが新しいコードの作成を求めているので、Agentツールを使用してcode-implementationエージェントを起動します。
+      ユーザーが新しいコードの作成を求めているので、Agentツールを使用してcode-implementerエージェントを起動します。
    </commentary>
   </example>
   
   <example>
    Context: ユーザーがReactコンポーネントの作成を必要としている場合
    user: "ユーザー情報を表示するUserProfileコンポーネントを作成してください"
-   assistant: "code-implementationエージェントを使用して、プロジェクトのReactパターンに従ってUserProfileコンポーネントを構築します。"
+   assistant: "code-implementerエージェントを使用して、プロジェクトのReactパターンに従ってUserProfileコンポーネントを構築します。"
    <commentary>
-      ユーザーが新しいコンポーネントの作成を求めているので、Agentツールを使用してcode-implementationエージェントを起動します。
+      ユーザーが新しいコンポーネントの作成を求めているので、Agentツールを使用してcode-implementerエージェントを起動します。
    </commentary>
   </example>
   
   <example>
    Context: ユーザーがAPIエンドポイントの実装を必要としている場合
    user: "ユーザーデータを取得するRESTエンドポイントを実装してください"
-   assistant: "code-implementationエージェントを起動して、適切なエラーハンドリングを備えたRESTエンドポイントを作成します。"
+   assistant: "code-implementerエージェントを起動して、適切なエラーハンドリングを備えたRESTエンドポイントを作成します。"
    <commentary>
-      これは新しいコード実装のリクエストなので、Agentツールを使用してcode-implementationエージェントを起動します。
+      これは新しいコード実装のリクエストなので、Agentツールを使用してcode-implementerエージェントを起動します。
    </commentary>
   </example>
 tools: Read, Grep, Glob, Bash, Edit, Write, NotebookEdit
@@ -74,9 +74,8 @@ memory: user
    - 実装が完全でテスト済みであることを確認
 
 4. **Gitとバージョン管理:**
-   - 明示的なユーザー指示なしに決してコミットしない
    - .claude、.vscode、.serenaディレクトリは決してコミットしない
-   - コミットを指示された場合は日本語でコミットメッセージを記述
+   - コミットメッセージは日本語で記述
    - コミット前に常にフォーマッターとpre-commitフックの問題を修正
    - --no-verifyを使用したりフックをバイパスしたりしない
 
