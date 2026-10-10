@@ -14,14 +14,20 @@ make install
 
 # Install specific components
 make install-config      # Install CLAUDE.md
-make install-settings    # Install settings.json
+make install-settings    # Merge settings.json into ~/.claude/settings.json (backup is created)
 make install-agents      # Install agent definitions
 make install-skills      # Install skill definitions
 
-# Import settings from ~/.claude/ back to this repo
+# Migrate from the old commands-based layout (backup, then remove legacy commands/agents)
+make migrate
+
+# Import managed settings keys from ~/.claude/ back to this repo
 make import-settings
 
-# Clean up installations
+# Install to another directory (e.g. for testing)
+make install CLAUDE_DIR=/tmp/claude-test
+
+# Clean up installations (only files/keys managed by this repo)
 make clean
 ```
 
