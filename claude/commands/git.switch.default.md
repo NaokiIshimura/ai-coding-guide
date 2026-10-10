@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git switch:*), Bash(git checkout:*), Bash(git pull:*), Bash(git status:*), Bash(git branch:*), Bash(git symbolic-ref:*)
+allowed-tools: Bash(git switch *), Bash(git checkout *), Bash(git pull *), Bash(git status *), Bash(git branch *), Bash(git symbolic-ref *)
 description: デフォルトブランチに切り替えて最新を取得する
 ---
 

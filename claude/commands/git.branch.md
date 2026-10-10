@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git branch:*), Bash(git checkout:*), Bash(git status:*)
+allowed-tools: Bash(git branch *), Bash(git checkout *), Bash(git status *)
 description: gitブランチを作成・切り替える
 ---
 

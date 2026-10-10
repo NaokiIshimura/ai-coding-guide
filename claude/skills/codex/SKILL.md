@@ -1,6 +1,6 @@
 ---
 description: Codex CLIを実行し、結果をマークダウンファイルに記録する
-allowed-tools: Bash(codex:*), Read, Write
+allowed-tools: Bash(codex *), Read, Write
 ---
 
 # Codex実行スキル

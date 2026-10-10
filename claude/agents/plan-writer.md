@@ -1,7 +1,7 @@
 ---
 name: plan-writer
 description: 実行計画(plan.md)作成スペシャリスト。複数ステップの実装タスクに対して、ステップバイステップの実行計画を作成します。実装前の計画立案や開発準備の際に使用してください。
-tools: Read, Grep, Glob, Bash, LS, WebFetch, Write
+tools: Read, Grep, Glob, Bash, WebFetch, Write
 color: magenta
 memory: user
 ---

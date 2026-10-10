@@ -1,5 +1,5 @@
 ---
-allowed-tools: Read, Glob, Grep, Bash(ls:*), Bash(find:*)
+allowed-tools: Read, Glob, Grep, Bash(ls *), Bash(find *)
 description: memoryファイルを読み込んでセッション間の文脈を把握する
 ---
 

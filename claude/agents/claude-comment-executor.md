@@ -11,7 +11,7 @@ description: |
    user: "claude-comment-finderが@claudeコメントを見つけました。対応してください"
    assistant: "@claudeコメントの内容を確認して、claude-comment-executorエージェントを使用して作業を実施します"
    <commentary>
-      @claudeコメントが見つかり対処が必要なので、Taskツールを使用してclaude-comment-executorエージェントを起動します。
+      @claudeコメントが見つかり対処が必要なので、Agentツールを使用してclaude-comment-executorエージェントを起動します。
    </commentary>
   </example>
   

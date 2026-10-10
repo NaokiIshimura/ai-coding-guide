@@ -33,7 +33,7 @@ make clean
 This repository implements a three-layer architecture for Claude Code:
 
 1. **Agents** (`claude/agents/`)
-   - Invoked via: `Task` tool with `subagent_type` parameter
+   - Invoked via: `Agent` tool with `subagent_type` parameter
    - Execution: Run in separate subprocess with independent context
    - Use case: Complex, multi-step tasks requiring autonomous operation
    - Examples: `code-collector`, `requirements-writer`, `debugger`

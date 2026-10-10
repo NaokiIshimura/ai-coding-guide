@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp_jira, Task
+allowed-tools: mcp__atlassian-v2, Agent
 description: JIRAチケットの情報を取得・操作する
 ---
 
@@ -32,7 +32,7 @@ JIRAチケットに関する以下のタスクを実行してください：
 6. `.claude/plans/<チケット番号>/` フォルダを作成
 
 7. 収集した情報を基に実装計画を作成
-   - Taskツールで `spec-writer` エージェントを呼び出し、以下の3つのドキュメントを作成：
+   - Agentツールで `spec-writer` エージェントを呼び出し、以下の3つのドキュメントを作成：
      1. 仕様書（requirements.md）
      2. 設計書（design.md）
      3. タスクリスト（tasks.md）

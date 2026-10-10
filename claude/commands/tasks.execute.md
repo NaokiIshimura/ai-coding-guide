@@ -1,5 +1,5 @@
 ---
-allowed-tools: Task
+allowed-tools: Agent
 description: tasks.mdに基づいてタスクを実行する
 ---
 
@@ -37,7 +37,7 @@ tasks.mdに定義されたタスクを順番に実装してください：
    - 確認を取得
 
 5. **タスク実行**
-   - Taskツールで `tasks-executor` エージェントを呼び出し、タスクを実行
+   - Agentツールで `tasks-executor` エージェントを呼び出し、タスクを実行
    - 呼び出し時に以下の情報を渡す：
      - tasks.mdのパス
      - 関連するrequirements.md、design.mdのパス（存在する場合）

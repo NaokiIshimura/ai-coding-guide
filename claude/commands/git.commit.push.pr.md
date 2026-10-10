@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git push:*), Bash(gh pr:*)
+allowed-tools: Bash(git add *), Bash(git status *), Bash(git commit *), Bash(git push *), Bash(gh pr *)
 description: gitコミット、プッシュ、プルリクエスト作成を実行する
 ---
 

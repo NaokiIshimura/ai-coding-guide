@@ -1,5 +1,5 @@
 ---
-allowed-tools: Write, Read, Bash(git:*), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Bash(mkdir:*), Glob, Grep, Task
+allowed-tools: Write, Read, Bash(git *), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Bash(mkdir *), Glob, Grep, Agent
 description: 実行計画（plan.md）を作成する
 ---
 
@@ -41,7 +41,7 @@ description: 実行計画（plan.md）を作成する
    - 既存の仕様書（requirements.md、design.md、tasks.md）があれば参照
 
    **b) 計画作成**
-   - Taskツールで `plan-writer` エージェントを呼び出し
+   - Agentツールで `plan-writer` エージェントを呼び出し
    - または直接作成
    - 出力: `<タイムスタンプ>_plan.md`
 

@@ -1,7 +1,7 @@
 ---
 name: tmux-pane-info
 description: 現在のtmuxセッション・ウィンドウ・ペインの情報、および同一ウィンドウ内の別ペインの情報を取得する
-allowed-tools: Bash(tmux:*)
+allowed-tools: Bash(tmux *)
 ---
 
 ## 概要

@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
+allowed-tools: Bash(git add *), Bash(git status *), Bash(git commit *)
 description: gitコミットを作成する
 ---
 

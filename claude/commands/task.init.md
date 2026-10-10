@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(mkdir:*), Bash(ls:*), Bash(cat:*), Bash(git:*), Read, Write
+allowed-tools: Bash(mkdir *), Bash(ls *), Bash(cat *), Bash(git *), Read, Write
 description: .claude/plans配下にタスク用ディレクトリを準備する
 ---
 

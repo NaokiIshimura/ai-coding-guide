@@ -306,7 +306,7 @@ EOF
 ### 通常の実行
 
 ```
-Task tool で起動:
+Agent tool で起動:
 subagent_type: codex-implementer
 description: tasks.mdに基づいて実装を実行
 prompt: ".claude/plans/ABC-123/tasks.mdのタスクを順次実装してください"
@@ -315,7 +315,7 @@ prompt: ".claude/plans/ABC-123/tasks.mdのタスクを順次実装してくだ�
 ### 特定のタスクから開始
 
 ```
-Task tool で起動:
+Agent tool で起動:
 subagent_type: codex-implementer
 description: Task-3から実装を実行
 prompt: ".claude/plans/ABC-123/tasks.mdのTask-3以降を実装してください"

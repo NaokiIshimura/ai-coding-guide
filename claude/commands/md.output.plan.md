@@ -1,5 +1,5 @@
 ---
-allowed-tools: Write, Read, Bash(git:*), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Glob, Grep, Task
+allowed-tools: Write, Read, Bash(git *), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Glob, Grep, Agent
 description: 実行計画（plan.md）を出力する
 ---
 
@@ -33,7 +33,7 @@ description: 実行計画（plan.md）を出力する
    - チケット番号が不明な場合は `.claude/plans/tmp/` を使用
 
 4. **実行計画ドキュメントの作成**
-   - Taskツールで `plan-writer` エージェントを呼び出し、plan.mdを作成
+   - Agentツールで `plan-writer` エージェントを呼び出し、plan.mdを作成
    - 呼び出し時に以下の情報を渡す：
      - 実行計画のタイトル
      - チケット番号またはタスク識別子

@@ -1,5 +1,5 @@
 ---
-allowed-tools: Read, Bash(codex review:*)
+allowed-tools: Read, Bash(codex review *)
 description: Codexにコードレビューを依頼する
 ---
 

@@ -1,5 +1,5 @@
 ---
-allowed-tools: Write, Read, Bash(git:*), Bash(date:*), Glob, Grep
+allowed-tools: Write, Read, Bash(git *), Bash(date *), Glob, Grep
 description: 現在までの作業状況・調査結果をmarkdownファイルに出力する
 ---
 

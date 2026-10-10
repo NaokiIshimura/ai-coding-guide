@@ -1,7 +1,7 @@
 ---
 name: git-operator
 description: Git操作スペシャリスト。ブランチ作成、コミット、プッシュ、マージなどのGit操作を実行します。Git操作が必要な際に使用してください。
-tools: Read, Grep, Glob, Bash, mcp_github
+tools: Read, Grep, Glob, Bash, mcp__github
 color: green
 memory: user
 ---
@@ -11,7 +11,7 @@ memory: user
 ## 重要なルール
 
 ### MCP優先
-- GitHub関連の操作はMCP（mcp_github）を優先的に使用してください
+- GitHub関連の操作はMCP（mcp__github）を優先的に使用してください
 - ghコマンドは使用しないでください
 
 ### コミット

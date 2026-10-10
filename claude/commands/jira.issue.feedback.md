@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp_jira, Bash(git log:*), Bash(git diff:*), Grep, Read
+allowed-tools: mcp__atlassian-v2, Bash(git log *), Bash(git diff *), Grep, Read
 description: JIRAチケットへフィードバックを投稿する
 ---
 

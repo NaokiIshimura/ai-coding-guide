@@ -1,5 +1,5 @@
 ---
-allowed-tools: Write, Edit, Read, Glob, Grep, Bash(date:*), Bash(ls:*), Bash(find:*)
+allowed-tools: Write, Edit, Read, Glob, Grep, Bash(date *), Bash(ls *), Bash(find *)
 description: 重要な情報をmemoryファイルに書き込む
 ---
 

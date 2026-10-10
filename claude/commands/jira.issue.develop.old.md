@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp_jira, Task
+allowed-tools: mcp__atlassian-v2, Agent
 description: JIRAチケットの情報を取得・操作する
 ---
 

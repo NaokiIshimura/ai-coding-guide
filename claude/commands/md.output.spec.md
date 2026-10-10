@@ -1,5 +1,5 @@
 ---
-allowed-tools: Write, Read, Bash(git:*), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Glob, Grep, Task
+allowed-tools: Write, Read, Bash(git *), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Glob, Grep, Agent
 description: 実装計画作成（requirements/design/tasks.md）を出力する
 ---
 
@@ -31,7 +31,7 @@ description: 実装計画作成（requirements/design/tasks.md）を出力する
    - チケット番号が不明な場合は `.claude/plans/tmp/` を使用
 
 4. **実装計画ドキュメントの作成**
-   - Taskツールで `spec-writer` エージェントを呼び出し、以下の3つのドキュメントを作成：
+   - Agentツールで `spec-writer` エージェントを呼び出し、以下の3つのドキュメントを作成：
      1. 仕様書（requirements.md）
      2. 設計書（design.md）
      3. タスクリスト（tasks.md）

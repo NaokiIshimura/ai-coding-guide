@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git push:*)
+allowed-tools: Bash(git push *)
 description: gitプッシュを実行する
 ---
 

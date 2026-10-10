@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git pull:*), Bash(git fetch:*), Bash(git status:*)
+allowed-tools: Bash(git pull *), Bash(git fetch *), Bash(git status *)
 description: 最新の変更を取得する
 ---
 

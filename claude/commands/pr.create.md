@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(gh pr:*), mcp_github
+allowed-tools: Bash(gh pr *), mcp__github
 description: プルリクエストを作成する
 ---
 

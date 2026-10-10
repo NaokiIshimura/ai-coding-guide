@@ -6,7 +6,7 @@
 
 | 項目 | Skills | Commands | Agents |
 |------|--------|----------|--------|
-| 呼び出し方 | Skill tool | `/xxx` | Task tool (subagent_type) |
+| 呼び出し方 | Skill tool | `/xxx` | Agent tool (subagent_type) |
 | 実行主体 | メインプロセス | メインプロセス | サブプロセス |
 | コンテキスト | 共有 | 共有 | 独立 |
 | 用途 | 汎用的なスキル | プロジェクト固有のワークフロー | 専門的タスクの自律実行 |
@@ -216,7 +216,7 @@ allowed-tools: <許可ツール（カンマ区切り）>
 
 ## 関連ファイル
 
-### Agent（Taskツール経由での呼び出し用）
+### Agent（Agentツール経由での呼び出し用）
 
 - `claude/agents/spec-writer.md`
 - `claude/agents/plan-writer.md`

@@ -1,5 +1,5 @@
 ---
-allowed-tools: Write, Read, Bash(git:*), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Bash(mkdir:*), Glob, Grep, Task
+allowed-tools: Write, Read, Bash(git *), Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Bash(mkdir *), Glob, Grep, Agent
 description: 仕様書（requirements/design/tasks.md）を作成する
 ---
 
@@ -33,7 +33,7 @@ description: 仕様書（requirements/design/tasks.md）を作成する
    ```
 
 4. **仕様書ドキュメントの作成**
-   - Taskツールで `spec-writer` エージェントを呼び出し
+   - Agentツールで `spec-writer` エージェントを呼び出し
    - 収集した情報を基に3つのドキュメントを統合的に作成
    - 出力:
      - `<タイムスタンプ>_requirements.md`

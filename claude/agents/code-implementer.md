@@ -11,7 +11,7 @@ description: |
    user: "メールアドレスを検証する関数を書いてください"
    assistant: "code-implementationエージェントを使用して、その検証関数を作成します。"
    <commentary>
-      ユーザーが新しいコードの作成を求めているので、Taskツールを使用してcode-implementationエージェントを起動します。
+      ユーザーが新しいコードの作成を求めているので、Agentツールを使用してcode-implementationエージェントを起動します。
    </commentary>
   </example>
   
@@ -20,7 +20,7 @@ description: |
    user: "ユーザー情報を表示するUserProfileコンポーネントを作成してください"
    assistant: "code-implementationエージェントを使用して、プロジェクトのReactパターンに従ってUserProfileコンポーネントを構築します。"
    <commentary>
-      ユーザーが新しいコンポーネントの作成を求めているので、Taskツールを使用してcode-implementationエージェントを起動します。
+      ユーザーが新しいコンポーネントの作成を求めているので、Agentツールを使用してcode-implementationエージェントを起動します。
    </commentary>
   </example>
   
@@ -29,10 +29,10 @@ description: |
    user: "ユーザーデータを取得するRESTエンドポイントを実装してください"
    assistant: "code-implementationエージェントを起動して、適切なエラーハンドリングを備えたRESTエンドポイントを作成します。"
    <commentary>
-      これは新しいコード実装のリクエストなので、Taskツールを使用してcode-implementationエージェントを起動します。
+      これは新しいコード実装のリクエストなので、Agentツールを使用してcode-implementationエージェントを起動します。
    </commentary>
   </example>
-tools: Edit, MultiEdit, Write, NotebookEdit
+tools: Read, Grep, Glob, Bash, Edit, Write, NotebookEdit
 model: opus
 color: red
 memory: user

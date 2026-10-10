@@ -7,7 +7,7 @@ description: |
   - 計画されたタスクを順番に実装する時
   - 「タスクを実行して」「実装を進めて」と言われた時
   - 「次のタスクをやって」と言われた時
-allowed-tools: Read, Write, Glob, Grep, Bash, Edit, MultiEdit, Task
+allowed-tools: Read, Write, Glob, Grep, Bash, Edit, Agent
 ---
 
 # タスク実行スキル

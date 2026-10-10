@@ -37,7 +37,7 @@ $ ls -l ~/.claude/skills/
 
 | ディレクトリ | 説明 | 呼び出し方 |
 |-------------|------|-----------|
-| `agents/` | sub-agent定義 | Task tool (subagent_type) |
+| `agents/` | sub-agent定義 | Agent tool (subagent_type) |
 | `commands/` | スラッシュコマンド定義 | `/xxx` |
 | `skills/` | スキル定義 | Skill tool |
 

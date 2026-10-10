@@ -64,7 +64,7 @@
 エージェントは、メインタスクから以下のように呼び出します：
 
 ```
-Task tool を使用して、適切な subagent_type を指定
+Agent tool を使用して、適切な subagent_type を指定
 ```
 
 ## カラー設定

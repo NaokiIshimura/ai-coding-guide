@@ -1,6 +1,6 @@
 ---
 description: プルリクエストを操作する（create, update, comment resolve）
-allowed-tools: Bash(gh pr:*), Bash(git:*), mcp_github, Edit, MultiEdit, Read, Glob
+allowed-tools: Bash(gh pr *), Bash(git *), mcp__github, Edit, Read, Glob
 ---
 
 ## 概要

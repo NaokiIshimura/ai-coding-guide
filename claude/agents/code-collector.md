@@ -1,7 +1,7 @@
 ---
 name: code-collector
 description: ソースコード情報収集スペシャリスト。プロジェクトのコード構造、依存関係、API、データフローを効率的に収集・分析・整理します。コードベースの理解や技術調査の際に使用してください。
-tools: Read, Grep, Glob, Bash, LS, WebFetch, Write
+tools: Read, Grep, Glob, Bash, WebFetch, Write
 color: blue
 memory: user
 ---

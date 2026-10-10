@@ -1,6 +1,6 @@
 ---
-allowed-tools: Task
-description: @claudeコメントの検索・実行・削除を管理する
+allowed-tools: Agent
+description: "@claudeコメントの検索・実行・削除を管理する"
 ---
 
 ## コンテキスト

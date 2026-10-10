@@ -1,6 +1,6 @@
 ---
 description: markdownファイルを操作する（output, input）
-allowed-tools: Write, Read, Bash(git:*), Bash(date:*), Bash(ls:*), Bash(find:*), Glob, Grep, Task
+allowed-tools: Write, Read, Bash(git *), Bash(date *), Bash(ls *), Bash(find *), Glob, Grep, Agent
 ---
 
 ## 概要

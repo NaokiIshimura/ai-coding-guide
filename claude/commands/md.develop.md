@@ -1,5 +1,5 @@
 ---
-allowed-tools: Task
+allowed-tools: Agent
 description: markdownファイルの情報を元に開発を実施する
 ---
 
@@ -28,7 +28,7 @@ markdownファイルに関する以下のタスクを実行してください：
 5. `.claude/plans/<親ディレクトリ名>/` フォルダを作成（存在しない場合）
 
 6. 収集した情報を基に実装計画を作成
-   - Taskツールで `spec-writer` エージェントを呼び出し、以下の3つのドキュメントを作成：
+   - Agentツールで `spec-writer` エージェントを呼び出し、以下の3つのドキュメントを作成：
      1. 仕様書（requirements.md）
      2. 設計書（design.md）
      3. タスクリスト（tasks.md）

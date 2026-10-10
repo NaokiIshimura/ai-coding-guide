@@ -382,7 +382,7 @@ EOF
 ### 単一ファイルのレビュー
 
 ```
-Task tool で起動:
+Agent tool で起動:
 subagent_type: codex-reviewer
 description: src/auth/login.tsをレビュー
 prompt: "src/auth/login.tsをレビューしてください"
@@ -391,7 +391,7 @@ prompt: "src/auth/login.tsをレビューしてください"
 ### ディレクトリ全体のレビュー
 
 ```
-Task tool で起動:
+Agent tool で起動:
 subagent_type: codex-reviewer
 description: src/auth/をレビュー
 prompt: "src/auth/配下の全ファイルをレビューしてください"
@@ -400,7 +400,7 @@ prompt: "src/auth/配下の全ファイルをレビューしてください"
 ### 最近の変更のレビュー
 
 ```
-Task tool で起動:
+Agent tool で起動:
 subagent_type: codex-reviewer
 description: 最近の変更をレビュー
 prompt: "最近変更されたファイルをレビューしてください"

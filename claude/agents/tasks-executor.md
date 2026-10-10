@@ -10,7 +10,7 @@ description: |
    user: "tasks.mdに従って実装を進めてください"
    assistant: "tasks-executorエージェントを使用して、タスクを順番に実装します。"
    <commentary>
-      ユーザーが計画に基づいた実装を求めているので、Taskツールを使用してtasks-executorエージェントを起動します。
+      ユーザーが計画に基づいた実装を求めているので、Agentツールを使用してtasks-executorエージェントを起動します。
    </commentary>
   </example>
 
@@ -19,10 +19,10 @@ description: |
    user: "TASK-003から実装を開始してください"
    assistant: "tasks-executorエージェントを使用して、TASK-003から順番に実装を進めます。"
    <commentary>
-      ユーザーが特定のタスクからの実装を求めているので、Taskツールを使用してtasks-executorエージェントを起動します。
+      ユーザーが特定のタスクからの実装を求めているので、Agentツールを使用してtasks-executorエージェントを起動します。
    </commentary>
   </example>
-tools: Read, Grep, Glob, Bash, LS, Edit, MultiEdit, Write, NotebookEdit, Task
+tools: Read, Grep, Glob, Bash, Edit, Write, NotebookEdit, Agent
 model: opus
 color: green
 memory: user

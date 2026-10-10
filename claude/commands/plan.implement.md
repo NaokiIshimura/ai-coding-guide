@@ -1,5 +1,5 @@
 ---
-allowed-tools: Task, Read, Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Write, Glob
+allowed-tools: Agent, Read, Bash(TZ='Asia/Tokyo' date '+%Y_%m%d_%H%M_%S'), Write, Glob
 description: 実装計画に基づいて実装を開始する
 ---
 
@@ -58,7 +58,7 @@ description: 実装計画に基づいて実装を開始する
    - 特定のタスクから開始する場合は、タスクIDを指定できるようにする（オプション）
 
 5. **タスク実行**
-   - Taskツールで `tasks-executor` エージェントを呼び出し、実装を実行
+   - Agentツールで `tasks-executor` エージェントを呼び出し、実装を実行
    - 呼び出し時に以下の情報を渡す：
      - tasks.md のパス
      - plan.md のパス（存在する場合）

@@ -1,6 +1,6 @@
 ---
 description: gitを操作する（branch, commit, push, pull）
-allowed-tools: Bash(git:*)
+allowed-tools: Bash(git *)
 ---
 
 ## 概要

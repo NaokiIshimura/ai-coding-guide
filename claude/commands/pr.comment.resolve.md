@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(gh pr:*), mcp_github, Edit, MultiEdit, Read
+allowed-tools: Bash(gh pr *), mcp__github, Edit, Read
 description: PRのコメントを確認して修正を実施する
 ---
 

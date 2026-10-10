@@ -1,5 +1,5 @@
 ---
-allowed-tools: Read, Glob, Bash(ls:*), Bash(find:*), Task
+allowed-tools: Read, Glob, Bash(ls *), Bash(find *), Agent
 description: 指定したディレクトリ内のmarkdownファイルを読み込んで作業状況を把握する
 ---
 

@@ -1,5 +1,5 @@
 ---
-allowed-tools: Read, Bash(codex:*)
+allowed-tools: Read, Bash(codex *)
 description: Codexにデバッグを依頼する
 ---
 

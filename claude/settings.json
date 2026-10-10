@@ -156,9 +156,8 @@
       "Bash(grep *)",
       "Bash(ls *)",
       "Edit",
-      "Fetch",
-      "MultiEdit",
       "Read",
+      "WebFetch",
       "Write"
     ],
     "deny": [

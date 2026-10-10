@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(gh pr:*), Bash(gh run:*), Bash(osascript:*)
+allowed-tools: Bash(gh pr *), Bash(gh run *), Bash(osascript *)
 description: PRのCIが完了するまで待機して通知する
 ---
 
