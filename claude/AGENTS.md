@@ -1,71 +1,67 @@
 # Claude Agents
 
-このディレクトリには、特定のタスクに特化したClaude Codeエージェントの定義が格納されています。
+このディレクトリには、特定のタスクに特化したClaude Codeエージェント（sub-agent）の定義が格納されています。
 
 ## エージェント一覧
 
-### コード関連
+### 情報収集（Collector系）
 
-| エージェント | 説明 | 主な用途 |
-|-------------|------|----------|
-| `code-collector` | ソースコード情報収集スペシャリスト | コードベース構造分析、API依存関係調査、データフロー分析 |
-| `code-implementer` | コード実装スペシャリスト | 新機能実装、既存コード修正、リファクタリング |
-| `code-reviewer` | コードレビュースペシャリスト | コード品質チェック、セキュリティレビュー、ベストプラクティス確認 |
-| `debugger` | デバッグスペシャリスト | エラー原因特定、テスト失敗調査、パフォーマンス問題解析 |
+| エージェント | 説明 | 主なツール |
+|-------------|------|-----------|
+| `confluence-collector` | Confluence情報収集スペシャリスト。スペース、ページ、ブログ、添付ファイルからの情報を収集・整理 | WebFetch, Bash, Read, Write, `mcp__atlassian-v2` |
+| `jira-collector` | JIRA情報収集スペシャリスト。プロジェクト、課題、スプリント、エピックからの情報を収集・整理 | WebFetch, Bash, Read, Write, `mcp__atlassian-v2` |
+| `pr-collector` | Pull Request情報収集スペシャリスト。PR、レビュー、コメント、変更内容からの情報を収集・整理 | WebFetch, Bash, Read, Write, `mcp__github`, Grep, Glob |
+| `slack-collector` | Slack情報収集スペシャリスト。チャンネル、スレッド、メッセージからの情報を収集・整理 | WebFetch, Bash, Read, Write, `mcp__slack` |
+| `web-collector` | Web情報収集スペシャリスト。外部Webサイト、API、オンラインドキュメントからの情報を収集・整理 | WebFetch, WebSearch, Write, Read |
 
-### 情報収集
+### レビュー・分析（Analyzer系）
 
-| エージェント | 説明 | 主な用途 |
-|-------------|------|----------|
-| `file-collector` | ファイル情報収集スペシャリスト | ファイル構造分析、設定ファイル収集、ドキュメント整理 |
-| `web-collector` | Web情報収集スペシャリスト | 技術ドキュメント収集、API仕様取得、最新情報調査 |
+| エージェント | 説明 | 主なツール |
+|-------------|------|-----------|
+| `debugger` | エラー、テスト失敗、予期しない動作のデバッグスペシャリスト | Read, Edit, Bash, Grep, Glob |
+| `data-scientist` | SQLクエリ、BigQuery操作、データインサイトのデータ分析専門家 | Bash, Read, Write |
 
-### 外部サービス連携
+### 実装（Implementer系）
 
-| エージェント | 説明 | 主な用途 |
-|-------------|------|----------|
-| `confluence-collector` | Confluence情報収集スペシャリスト | プロジェクトドキュメント収集、仕様書取得、ナレッジベース調査 |
-| `jira-collector` | JIRA情報収集スペシャリスト | チケット情報収集、スプリント状況確認、課題一括取得 |
-| `pr-collector` | Pull Request情報収集スペシャリスト | PRレビュー内容収集、変更履歴分析、コメント整理 |
-| `slack-collector` | Slack情報収集スペシャリスト | チャンネル会話収集、重要決定事項抽出、コミュニケーション履歴分析 |
-
-### データ分析
-
-| エージェント | 説明 | 主な用途 |
-|-------------|------|----------|
-| `data-scientist` | データ分析専門家 | SQLクエリ実行、データ分析レポート作成、BigQueryデータ抽出 |
-
-### 実装計画・仕様書作成
-
-| エージェント | 説明 | 主な用途 |
-|-------------|------|----------|
-| `markdown-handler` | Markdownファイル読み書きスペシャリスト | 作業状況出力、作業履歴読み込み、ドキュメント整理 |
-| `plan-writer` | 実行計画作成スペシャリスト | 実行計画作成、ステップバイステップ計画立案、リスク分析、仕様書参照 |
-| `spec-writer` | 仕様書作成スペシャリスト | requirements/design/tasks統合作成、包括的仕様書作成 |
-| `tasks-executor` | タスク実行スペシャリスト | tasks.mdに基づく順次実装、計画ベースの開発 |
+| エージェント | 説明 | 主なツール |
+|-------------|------|-----------|
+| `code-implementer` | 新機能の実装、関数・コンポーネントの作成などのコーディング作業を担当（`tasks-execute` skill から委譲されることもある） | Read, Grep, Glob, Bash, Edit, Write, NotebookEdit |
 
 ### Claude Comment管理
 
-| エージェント | 説明 | 主な用途 |
-|-------------|------|----------|
-| `claude-comment-finder` | @claudeコメント検出スペシャリスト | @claudeコメント検索、TODO項目抽出、実装要求整理 |
-| `claude-comment-executor` | @claudeコメント実行スペシャリスト | @claudeコメント実装、自動タスク実行、コード改善適用 |
-| `claude-comment-cleaner` | @claudeコメントクリーンアップスペシャリスト | 完了コメント削除、コードクリーンアップ、不要コメント整理 |
+`/claude.comment` skill から順番に呼び出されます。
 
-### Codex連携
-
-| エージェント | 説明 | 主な用途 |
-|-------------|------|----------|
-| `codex-implementer` | Codex実装エージェント | tasks.mdに基づく自律的な実装、各タスクを順次Codexに依頼 |
-| `codex-reviewer` | Codexレビューエージェント | 複数ファイルの一括レビュー、コード品質・セキュリティチェック |
+| エージェント | 説明 | 主なツール |
+|-------------|------|-----------|
+| `claude-comment-finder` | コードベース内の@claudeコメントを検索し、要求内容を整理 | Glob, Grep, Read, WebFetch, WebSearch, ListMcpResourcesTool, ReadMcpResourceTool |
+| `claude-comment-executor` | @claudeコメントの指示に従って実装・リファクタリングなどを実行 | 全ツール（`tools` 指定なし） |
+| `claude-comment-cleaner` | @claudeコメントの対応が完了したことを確認し、解決済みコメントを削除 | Read, Grep, Glob, Edit, Write |
 
 ## エージェントの使用方法
 
-エージェントは、メインタスクから以下のように呼び出します：
+エージェントは、メインセッションから Agent ツールで `subagent_type` を指定して呼び出します。
 
 ```
-Agent tool を使用して、適切な subagent_type を指定
+Agent ツールを使用して、適切な subagent_type（例: jira-collector）を指定
 ```
+
+- エージェントは独立したコンテキストで動作し、完了後に結果を返します
+- 大量のデータを扱う場合は、エージェントに任せてメインセッションのコンテキストを節約してください
+- 広範囲のファイル探索・コード調査には、組み込みの `Explore` エージェントを利用してください
+
+## 削除したエージェントと代替手段
+
+| 削除したエージェント | 代替手段 |
+|---------------------|---------|
+| `code-collector`, `file-collector` | 組み込みの `Explore` エージェント |
+| `code-reviewer` | 組み込みの `/code-review` |
+| `git-operator` | `git` skill（`/git.commit` などから呼び出し） |
+| `markdown-handler` | `markdown` skill（`/md.output`, `/md.input`） |
+| `plan-writer`, `spec-writer` | 同名の skill（`/plan.create`, `/spec.create` などから呼び出し） |
+| `tasks-executor` | `tasks-execute` skill（`/tasks.execute`, `/plan.implement`） |
+| `codex-implementer`, `codex-reviewer` | `codex` skill（`/codex.implement`, `/codex.review`） |
+
+既存環境に残っている削除済みエージェントは `make migrate` でバックアップ後に削除できます（詳細はルートの `README.md` を参照）。
 
 ## カラー設定
 
@@ -73,12 +69,10 @@ Agent tool を使用して、適切な subagent_type を指定
 
 | 役割 | 色 | 対象エージェント |
 |------|-----|------------------|
-| 情報収集（Collector系） | `blue` | file-collector, code-collector, web-collector, confluence-collector, jira-collector, pr-collector, slack-collector |
-| ドキュメント作成（Writer系） | `magenta` | spec-writer, plan-writer |
-| レビュー・分析（Reviewer/Analyzer系） | `yellow` | code-reviewer, debugger, data-scientist, codex-reviewer |
+| 情報収集（Collector系） | `blue` | confluence-collector, jira-collector, pr-collector, slack-collector, web-collector |
+| レビュー・分析（Analyzer系） | `yellow` | debugger, data-scientist |
 | 実装（Implementer系） | `red` | code-implementer |
 | Claude Comment管理 | `cyan` | claude-comment-finder, claude-comment-executor, claude-comment-cleaner |
-| 操作・統括（Operator/Orchestrator系） | `cyan` | git-operator, tasks-executor, codex-implementer |
 
 ### 設定方法
 
@@ -93,6 +87,8 @@ color: blue
 memory: user
 ---
 ```
+
+`model` を指定すると、エージェントが利用するモデルを固定できます（例: `claude-comment-finder` / `claude-comment-cleaner` は `sonnet`、`code-implementer` / `claude-comment-executor` は `opus`）。
 
 ## メモリ設定
 
@@ -112,22 +108,8 @@ memory: user
 - `Read`, `Write`, `Edit` ツールがメモリ操作用に自動有効化される
 - エージェントは実行中に学んだパターン・知見・意思決定を記録し、次回以降の実行で活用する
 
-### 設定方法
-
-エージェント定義ファイルのfrontmatterに`memory`フィールドを追加します：
-
-```yaml
----
-name: example-agent
-description: エージェントの説明
-tools: Read, Write, Bash
-color: blue
-memory: user
----
-```
-
 ## 注意事項
 
 - エージェントは独立して動作し、完了後に結果を返します
 - 複数のエージェントを並行実行することで効率を向上できます
-- 大量のデータを扱う場合は、専用のエージェントを使用してメインタスクのコンテクストを節約してください
+- `claude/agents/` を更新した場合は、このファイル（`claude/AGENTS.md`）も更新してください
