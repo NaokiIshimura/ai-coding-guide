@@ -17,6 +17,7 @@ ai-coding-guide/
 │   ├── git.md           # Git操作ガイド
 │   ├── github.md        # GitHub（PRレビュー投稿）ガイド
 │   ├── mcp.md           # MCPツール使用ガイド
+│   ├── jira.md          # JIRA操作ガイド
 │   ├── frontend.md      # フロントエンド開発ガイド
 │   ├── react.md         # React開発ガイド
 │   ├── storybook.md     # Storybook作成ガイド
