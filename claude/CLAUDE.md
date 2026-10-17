@@ -12,6 +12,9 @@
 ## mcp
 @~/ai-coding-guide/guides/mcp.md
 
+## jira
+@~/ai-coding-guide/guides/jira.md
+
 ## frontend
 @~/ai-coding-guide/guides/frontend.md
 
