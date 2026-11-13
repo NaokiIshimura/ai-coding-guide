@@ -15,6 +15,9 @@
 ## jira
 @~/ai-coding-guide/guides/jira.md
 
+## confluence
+@~/ai-coding-guide/guides/confluence.md
+
 ## frontend
 @~/ai-coding-guide/guides/frontend.md
 
